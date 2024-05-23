@@ -20,6 +20,12 @@
 		31A3BEB82BFF68F600A7C0D4 /* AdditionaInformationScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A3BEB72BFF68F600A7C0D4 /* AdditionaInformationScreen.storyboard */; };
 		31A3BEBA2BFF692000A7C0D4 /* AdditionalInfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEB92BFF692000A7C0D4 /* AdditionalInfomationViewController.swift */; };
 		31A3BEBC2BFF694A00A7C0D4 /* AdditionalInfomationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEBB2BFF694A00A7C0D4 /* AdditionalInfomationViewModel.swift */; };
+		31A3BEBF2BFF71A300A7C0D4 /* EmployessListScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A3BEBE2BFF71A300A7C0D4 /* EmployessListScreen.storyboard */; };
+		31A3BEC12BFF71B600A7C0D4 /* EmployessListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEC02BFF71B600A7C0D4 /* EmployessListViewController.swift */; };
+		31A3BEC32BFF71F200A7C0D4 /* EmployessListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEC22BFF71F200A7C0D4 /* EmployessListViewModel.swift */; };
+		31A3BEC62BFF726F00A7C0D4 /* EmployeeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A3BEC52BFF726F00A7C0D4 /* EmployeeView.xib */; };
+		31A3BEC82BFF72AB00A7C0D4 /* EmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEC72BFF72AB00A7C0D4 /* EmployeeView.swift */; };
+		31A3BECB2BFF7C6B00A7C0D4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BECA2BFF7C6B00A7C0D4 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +63,12 @@
 		31A3BEB72BFF68F600A7C0D4 /* AdditionaInformationScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdditionaInformationScreen.storyboard; sourceTree = "<group>"; };
 		31A3BEB92BFF692000A7C0D4 /* AdditionalInfomationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfomationViewController.swift; sourceTree = "<group>"; };
 		31A3BEBB2BFF694A00A7C0D4 /* AdditionalInfomationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfomationViewModel.swift; sourceTree = "<group>"; };
+		31A3BEBE2BFF71A300A7C0D4 /* EmployessListScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmployessListScreen.storyboard; sourceTree = "<group>"; };
+		31A3BEC02BFF71B600A7C0D4 /* EmployessListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployessListViewController.swift; sourceTree = "<group>"; };
+		31A3BEC22BFF71F200A7C0D4 /* EmployessListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployessListViewModel.swift; sourceTree = "<group>"; };
+		31A3BEC52BFF726F00A7C0D4 /* EmployeeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeView.xib; sourceTree = "<group>"; };
+		31A3BEC72BFF72AB00A7C0D4 /* EmployeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeView.swift; sourceTree = "<group>"; };
+		31A3BECA2BFF7C6B00A7C0D4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +120,11 @@
 			isa = PBXGroup;
 			children = (
 				31A3BEB22BFF3BF700A7C0D4 /* App Delegate */,
-				31A3BEB32BFF3EFF00A7C0D4 /* Login */,
-				31A3BEB62BFF68B100A7C0D4 /* Additional Infromation */,
+				31A3BEB32BFF3EFF00A7C0D4 /* Login screen */,
+				31A3BEB62BFF68B100A7C0D4 /* Additional Infromation screen */,
+				31A3BEBD2BFF712300A7C0D4 /* Employees list screen */,
+				31A3BEC42BFF724800A7C0D4 /* Views */,
+				31A3BEC92BFF7C5100A7C0D4 /* Extensions */,
 				31A3BE8B2BFF378E00A7C0D4 /* Assets.xcassets */,
 				31A3BE8D2BFF378E00A7C0D4 /* LaunchScreen.storyboard */,
 				31A3BE902BFF378E00A7C0D4 /* Info.plist */,
@@ -143,24 +158,51 @@
 			path = "App Delegate";
 			sourceTree = "<group>";
 		};
-		31A3BEB32BFF3EFF00A7C0D4 /* Login */ = {
+		31A3BEB32BFF3EFF00A7C0D4 /* Login screen */ = {
 			isa = PBXGroup;
 			children = (
 				31A3BE882BFF378D00A7C0D4 /* Login.storyboard */,
 				31A3BE862BFF378D00A7C0D4 /* LoginViewController.swift */,
 				31A3BEB42BFF686B00A7C0D4 /* LoginViewModel.swift */,
 			);
-			path = Login;
+			path = "Login screen";
 			sourceTree = "<group>";
 		};
-		31A3BEB62BFF68B100A7C0D4 /* Additional Infromation */ = {
+		31A3BEB62BFF68B100A7C0D4 /* Additional Infromation screen */ = {
 			isa = PBXGroup;
 			children = (
 				31A3BEB72BFF68F600A7C0D4 /* AdditionaInformationScreen.storyboard */,
 				31A3BEB92BFF692000A7C0D4 /* AdditionalInfomationViewController.swift */,
 				31A3BEBB2BFF694A00A7C0D4 /* AdditionalInfomationViewModel.swift */,
 			);
-			path = "Additional Infromation";
+			path = "Additional Infromation screen";
+			sourceTree = "<group>";
+		};
+		31A3BEBD2BFF712300A7C0D4 /* Employees list screen */ = {
+			isa = PBXGroup;
+			children = (
+				31A3BEBE2BFF71A300A7C0D4 /* EmployessListScreen.storyboard */,
+				31A3BEC02BFF71B600A7C0D4 /* EmployessListViewController.swift */,
+				31A3BEC22BFF71F200A7C0D4 /* EmployessListViewModel.swift */,
+			);
+			path = "Employees list screen";
+			sourceTree = "<group>";
+		};
+		31A3BEC42BFF724800A7C0D4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				31A3BEC52BFF726F00A7C0D4 /* EmployeeView.xib */,
+				31A3BEC72BFF72AB00A7C0D4 /* EmployeeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		31A3BEC92BFF7C5100A7C0D4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				31A3BECA2BFF7C6B00A7C0D4 /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +309,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31A3BEC62BFF726F00A7C0D4 /* EmployeeView.xib in Resources */,
 				31A3BE8F2BFF378E00A7C0D4 /* LaunchScreen.storyboard in Resources */,
+				31A3BEBF2BFF71A300A7C0D4 /* EmployessListScreen.storyboard in Resources */,
 				31A3BE8C2BFF378E00A7C0D4 /* Assets.xcassets in Resources */,
 				31A3BE8A2BFF378D00A7C0D4 /* Login.storyboard in Resources */,
 				31A3BEB82BFF68F600A7C0D4 /* AdditionaInformationScreen.storyboard in Resources */,
@@ -295,10 +339,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31A3BEC32BFF71F200A7C0D4 /* EmployessListViewModel.swift in Sources */,
 				31A3BEB52BFF686B00A7C0D4 /* LoginViewModel.swift in Sources */,
 				31A3BE872BFF378D00A7C0D4 /* LoginViewController.swift in Sources */,
 				31A3BEBA2BFF692000A7C0D4 /* AdditionalInfomationViewController.swift in Sources */,
+				31A3BEC82BFF72AB00A7C0D4 /* EmployeeView.swift in Sources */,
+				31A3BECB2BFF7C6B00A7C0D4 /* Extensions.swift in Sources */,
 				31A3BEBC2BFF694A00A7C0D4 /* AdditionalInfomationViewModel.swift in Sources */,
+				31A3BEC12BFF71B600A7C0D4 /* EmployessListViewController.swift in Sources */,
 				31A3BE832BFF378D00A7C0D4 /* AppDelegate.swift in Sources */,
 				31A3BE852BFF378D00A7C0D4 /* SceneDelegate.swift in Sources */,
 			);
