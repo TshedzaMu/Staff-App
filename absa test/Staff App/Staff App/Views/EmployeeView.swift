@@ -16,7 +16,6 @@ class EmployeeView: UIView, NibLoadable {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
     }
     
     func styling() {

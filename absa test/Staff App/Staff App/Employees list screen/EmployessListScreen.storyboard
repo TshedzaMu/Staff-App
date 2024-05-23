@@ -16,15 +16,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PROFILE_CELL" rowHeight="109" id="dfc-q5-TYL">
-                                <rect key="frame" x="0.0" y="50" width="393" height="109"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PROFILE_CELL" rowHeight="100" id="dfc-q5-TYL" customClass="ProfileViewTableViewCell" customModule="Staff_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dfc-q5-TYL" id="X3w-S0-EF0">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="109"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FIx-d9-9Z4" customClass="EmployeeView" customModule="Staff_App" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="109"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>
                                     </subviews>
@@ -35,6 +35,9 @@
                                         <constraint firstItem="FIx-d9-9Z4" firstAttribute="top" secondItem="X3w-S0-EF0" secondAttribute="top" id="zAo-KH-0bs"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="employeeView" destination="FIx-d9-9Z4" id="hYv-Gi-fPp"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

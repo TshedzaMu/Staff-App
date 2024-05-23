@@ -12,13 +12,13 @@ class AdditionalInfomationViewController: UIViewController {
     
     @IBOutlet weak var profileImageView: UIImageView!
     
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var emailLabel: UILabel!
     
-    @IBOutlet weak var profileStackView: UIStackView!
+    @IBOutlet private weak var profileStackView: UIStackView!
     
-    @IBOutlet weak var dateOfBirthTextField: UITextField!
-    @IBOutlet weak var placeOfBirthTextField: UITextField!
+    @IBOutlet private weak var dateOfBirthTextField: UITextField!
+    @IBOutlet private weak var placeOfBirthTextField: UITextField!
     
     
     override func viewDidLoad() {

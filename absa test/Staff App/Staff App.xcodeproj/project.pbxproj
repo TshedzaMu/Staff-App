@@ -26,6 +26,7 @@
 		31A3BEC62BFF726F00A7C0D4 /* EmployeeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A3BEC52BFF726F00A7C0D4 /* EmployeeView.xib */; };
 		31A3BEC82BFF72AB00A7C0D4 /* EmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEC72BFF72AB00A7C0D4 /* EmployeeView.swift */; };
 		31A3BECB2BFF7C6B00A7C0D4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BECA2BFF7C6B00A7C0D4 /* Extensions.swift */; };
+		31A3BECD2BFF843300A7C0D4 /* ProfileViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BECC2BFF843300A7C0D4 /* ProfileViewTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		31A3BEC52BFF726F00A7C0D4 /* EmployeeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeView.xib; sourceTree = "<group>"; };
 		31A3BEC72BFF72AB00A7C0D4 /* EmployeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeView.swift; sourceTree = "<group>"; };
 		31A3BECA2BFF7C6B00A7C0D4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		31A3BECC2BFF843300A7C0D4 /* ProfileViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 			children = (
 				31A3BEC52BFF726F00A7C0D4 /* EmployeeView.xib */,
 				31A3BEC72BFF72AB00A7C0D4 /* EmployeeView.swift */,
+				31A3BECC2BFF843300A7C0D4 /* ProfileViewTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				31A3BEBA2BFF692000A7C0D4 /* AdditionalInfomationViewController.swift in Sources */,
 				31A3BEC82BFF72AB00A7C0D4 /* EmployeeView.swift in Sources */,
 				31A3BECB2BFF7C6B00A7C0D4 /* Extensions.swift in Sources */,
+				31A3BECD2BFF843300A7C0D4 /* ProfileViewTableViewCell.swift in Sources */,
 				31A3BEBC2BFF694A00A7C0D4 /* AdditionalInfomationViewModel.swift in Sources */,
 				31A3BEC12BFF71B600A7C0D4 /* EmployessListViewController.swift in Sources */,
 				31A3BE832BFF378D00A7C0D4 /* AppDelegate.swift in Sources */,
