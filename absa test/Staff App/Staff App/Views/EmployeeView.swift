@@ -10,9 +10,9 @@ import UIKit
 
 class EmployeeView: UIView, NibLoadable {
     
-  //  @IBOutlet weak var flagImageView: UIImageView!
-  //  @IBOutlet weak var countryNameLabel: UILabel!
-    
+   @IBOutlet private weak var flagImageView: UIImageView!
+   @IBOutlet private weak var nameLabel: UILabel!
+   @IBOutlet private weak var emailLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,9 +23,10 @@ class EmployeeView: UIView, NibLoadable {
         self.layer.cornerRadius = 5
     }
     
-    func setupView(countryName: String, urlString: String) {
+    func setupView(name: String, email: String, urlString: String) {
         styling()
-    //    flagImageView.load(urlString: urlString)
-     //   countryNameLabel.text = countryName
+        flagImageView.load(urlString: urlString)
+        nameLabel.text = name
+        emailLabel.text = email
     }
 }

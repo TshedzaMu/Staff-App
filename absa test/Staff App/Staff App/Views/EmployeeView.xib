@@ -52,6 +52,11 @@
                 <constraint firstItem="jli-zV-FMs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="iqV-o7-64z"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="emailLabel" destination="lWi-ox-YUV" id="sd9-Q6-Ykc"/>
+                <outlet property="flagImageView" destination="LFD-Yf-KpR" id="C5w-u0-1Om"/>
+                <outlet property="nameLabel" destination="lWC-xM-TNO" id="API-oS-LsY"/>
+            </connections>
             <point key="canvasLocation" x="-86.25954198473282" y="288.73239436619718"/>
         </view>
     </objects>
