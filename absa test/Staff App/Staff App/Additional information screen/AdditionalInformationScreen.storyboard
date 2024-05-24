@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Additional Information View Controller-->
+        <!--Additional Info-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="AdditionalInformationViewController" customModule="Staff_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdditionaInformationViewController" title="Additional Info" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="AdditionalInformationViewController" customModule="Staff_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,6 +97,7 @@
                             <constraint firstItem="WaT-B6-IUa" firstAttribute="top" secondItem="cEl-S6-gyC" secondAttribute="bottom" constant="77.666666666666629" id="WXF-f8-F02"/>
                             <constraint firstItem="WaT-B6-IUa" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="10" id="ZH5-he-qm3"/>
                             <constraint firstItem="j9b-lF-wuX" firstAttribute="centerX" secondItem="S12-pb-g6x" secondAttribute="centerX" id="dW7-Hf-3MX"/>
+                            <constraint firstItem="S12-pb-g6x" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="44.666666666666671" id="gcl-Au-zqe"/>
                             <constraint firstAttribute="trailing" secondItem="cEl-S6-gyC" secondAttribute="trailing" constant="10" id="hOV-gX-2mZ"/>
                             <constraint firstItem="cEl-S6-gyC" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="242" id="mM8-6A-moh"/>
                             <constraint firstItem="cEl-S6-gyC" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="10" id="nMw-04-Mbb"/>
@@ -106,13 +107,25 @@
                     </view>
                     <connections>
                         <outlet property="colorNameLabel" destination="N8P-Tq-R52" id="KCg-e9-UHb"/>
+                        <outlet property="colorStack" destination="QhI-xs-B6i" id="gnt-HY-81j"/>
                         <outlet property="colorView" destination="WLG-te-y4e" id="mBj-rt-pyB"/>
+                        <segue destination="qrj-bP-N9a" kind="show" identifier="reviewSegue" id="dKj-9u-fUG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="yti-3m-NRx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="116.79389312977099" y="-2.1126760563380285"/>
+        </scene>
+        <!--ReviewScreen-->
+        <scene sceneID="nw2-26-ZWG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ReviewScreen" id="qrj-bP-N9a" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="tZh-mr-lis"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PFU-p1-d9C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="733" y="-2"/>
         </scene>
     </scenes>
     <resources>

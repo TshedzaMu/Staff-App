@@ -39,6 +39,7 @@
 		31A3BEE62C00C2A100A7C0D4 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEE52C00C2A100A7C0D4 /* ConfirmationViewController.swift */; };
 		31A3BEE82C00C2DB00A7C0D4 /* ConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEE72C00C2DB00A7C0D4 /* ConfirmationViewModel.swift */; };
 		31A3BEEA2C00C63100A7C0D4 /* ColorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEE92C00C63100A7C0D4 /* ColorViewModel.swift */; };
+		31A3BEED2C00D07200A7C0D4 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEEC2C00D07200A7C0D4 /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		31A3BEE52C00C2A100A7C0D4 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		31A3BEE72C00C2DB00A7C0D4 /* ConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewModel.swift; sourceTree = "<group>"; };
 		31A3BEE92C00C63100A7C0D4 /* ColorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewModel.swift; sourceTree = "<group>"; };
+		31A3BEEC2C00D07200A7C0D4 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				31A3BEB22BFF3BF700A7C0D4 /* App Delegate */,
+				31A3BEEB2C00D05400A7C0D4 /* Service */,
 				31A3BEB32BFF3EFF00A7C0D4 /* Login screen */,
 				31A3BEB62BFF68B100A7C0D4 /* Employee Infromation screen */,
 				31A3BEBD2BFF712300A7C0D4 /* Employees list screen */,
@@ -282,6 +285,14 @@
 				31A3BEE72C00C2DB00A7C0D4 /* ConfirmationViewModel.swift */,
 			);
 			path = "Confirmation Screen";
+			sourceTree = "<group>";
+		};
+		31A3BEEB2C00D05400A7C0D4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				31A3BEEC2C00D07200A7C0D4 /* Service.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,6 +440,7 @@
 				31A3BEB52BFF686B00A7C0D4 /* LoginViewModel.swift in Sources */,
 				31A3BE872BFF378D00A7C0D4 /* LoginViewController.swift in Sources */,
 				31A3BEBA2BFF692000A7C0D4 /* EmployeeInfomationViewController.swift in Sources */,
+				31A3BEED2C00D07200A7C0D4 /* Service.swift in Sources */,
 				31A3BED42C00B2DB00A7C0D4 /* AdditionalInformationViewModel.swift in Sources */,
 				31A3BEC82BFF72AB00A7C0D4 /* EmployeeView.swift in Sources */,
 				31A3BECB2BFF7C6B00A7C0D4 /* Extensions.swift in Sources */,

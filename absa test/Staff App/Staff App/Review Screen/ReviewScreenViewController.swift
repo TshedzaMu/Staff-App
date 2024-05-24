@@ -16,6 +16,8 @@ class ReviewScreenViewController: UIViewController {
     @IBOutlet private weak var informationLabel: UILabel!
     @IBOutlet private weak var additionaInformationLabel: UILabel!
     
+    @IBOutlet private weak var submitButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -28,5 +30,17 @@ class ReviewScreenViewController: UIViewController {
     private func setupView() {
         personalDetailsStack.applyProfileStyle()
         additionaInformationLabel.applyProfileStyle()
+        submitButton.applyProfileStyle()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "confirmationSegue" {
+            if segue.destination is ReviewScreenViewController {
+            }
+        }
+    }
+    
+    @IBAction func submitButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "confirmationSegue", sender: nil)
     }
 }

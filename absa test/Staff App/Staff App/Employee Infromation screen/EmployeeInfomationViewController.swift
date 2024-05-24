@@ -23,6 +23,13 @@ class EmployeeInfomationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let nextButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(addButtonTapped))
+        navigationItem.rightBarButtonItem = nextButton
+        navigationItem.leftBarButtonItem?.isHidden = true
+    }
+    
+    @objc func addButtonTapped() {
+        performSegue(withIdentifier: "additionalInformationSegue", sender: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,13 +37,19 @@ class EmployeeInfomationViewController: UIViewController {
         setupView()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "additionalInformationSegue" {
+            if segue.destination is AdditionalInformationViewController {
+            }
+        }
+    }
+    
+
     @objc func profileStackviewClicked() {
          print("works")
         let storyBoard : UIStoryboard = UIStoryboard(name: "EmployessListScreen", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ListViewController") as! EmployessListViewController
         self.present(nextViewController, animated:true, completion:nil)
-//        let vc = ColorViewController() //change this to your class name
-//        self.present(vc, animated: true, completion: nil)
     }
     
     private func setupView() {
@@ -47,4 +60,3 @@ class EmployeeInfomationViewController: UIViewController {
         profileStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(profileStackviewClicked)))
     }
 }
-

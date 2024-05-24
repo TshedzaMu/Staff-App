@@ -103,11 +103,22 @@
                         <outlet property="placeOfBirthTextField" destination="BtA-Nl-aNf" id="2k0-u0-C8y"/>
                         <outlet property="profileImageView" destination="YtD-De-Wfk" id="gzb-PL-Gnc"/>
                         <outlet property="profileStackView" destination="Tf0-C0-khg" id="fKu-ZK-EWV"/>
+                        <segue destination="Ii9-Fd-sQc" kind="show" identifier="additionalInformationSegue" id="RSF-Mv-7ES"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="104.58015267175573" y="-2.1126760563380285"/>
+        </scene>
+        <!--AdditionalInformationScreen-->
+        <scene sceneID="tD3-SN-uOf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdditionalInformationScreen" id="Ii9-Fd-sQc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="znB-yg-IA7"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t5w-l7-J8E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="816" y="-2"/>
         </scene>
     </scenes>
     <resources>

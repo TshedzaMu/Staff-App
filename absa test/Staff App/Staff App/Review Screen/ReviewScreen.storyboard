@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Review Screen View Controller-->
+        <!--Review-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="ReviewScreenViewController" customModule="Staff_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Review" id="Y6W-OH-hqX" customClass="ReviewScreenViewController" customModule="Staff_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="761-N3-zPt">
-                                <rect key="frame" x="16" y="108.00000000000001" width="373" height="127.33333333333336"/>
+                                <rect key="frame" x="16" y="108" width="373" height="127.33333333333334"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnM-ay-iEy">
                                         <rect key="frame" x="0.0" y="0.0" width="373" height="20.333333333333332"/>
@@ -61,6 +61,9 @@
                                 <rect key="frame" x="10" y="725" width="373" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="BxX-GF-o42"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -87,11 +90,23 @@
                         <outlet property="informationLabel" destination="Q7b-Gu-fVX" id="ayZ-fV-fKB"/>
                         <outlet property="personalDetailsStack" destination="yOI-ep-mqI" id="12O-Ag-IkI"/>
                         <outlet property="profileImage" destination="rNQ-gS-BZK" id="gaa-z0-U9c"/>
+                        <outlet property="submitButton" destination="ROA-sZ-qR4" id="SiJ-in-fzx"/>
+                        <segue destination="J3z-Bh-GpX" kind="show" identifier="confirmationSegue" id="cha-n4-eMD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="116.79389312977099" y="-2.1126760563380285"/>
+        </scene>
+        <!--ConfirmationScreen-->
+        <scene sceneID="FBe-6I-MHH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ConfirmationScreen" id="J3z-Bh-GpX" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="IAn-Tz-5ew"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IJO-l5-gti" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="806" y="-2"/>
         </scene>
     </scenes>
     <resources>
