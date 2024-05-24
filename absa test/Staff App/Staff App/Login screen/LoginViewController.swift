@@ -13,6 +13,9 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var passwordTextField: UITextField!
     
     @IBOutlet private weak var loginButton: UIButton!
+    
+    private lazy var viewModel = LoginViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -29,7 +32,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButton(_ sender: Any) {
-        
+        viewModel.login()
     }
 }
 
