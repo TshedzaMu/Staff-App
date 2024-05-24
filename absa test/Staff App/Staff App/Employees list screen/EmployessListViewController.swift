@@ -15,6 +15,25 @@ class EmployessListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    func setupTableHeaderView() {
+          let headerView = UIView()
+          headerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 60)
+          
+          let titleLabel = UILabel()
+          titleLabel.text = "List Of Employyes"
+          titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
+          titleLabel.translatesAutoresizingMaskIntoConstraints = false
+          
+          headerView.addSubview(titleLabel)
+          
+          NSLayoutConstraint.activate([
+              titleLabel.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+              titleLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
+          ])
+          
+          EmployeesListTableView.tableHeaderView = headerView
+      }
 }
 
 extension EmployessListViewController: UITableViewDataSource, UITableViewDelegate {

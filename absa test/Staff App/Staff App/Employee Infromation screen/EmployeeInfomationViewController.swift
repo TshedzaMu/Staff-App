@@ -35,6 +35,8 @@ class EmployeeInfomationViewController: UIViewController {
         let storyBoard : UIStoryboard = UIStoryboard(name: "EmployessListScreen", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ListViewController") as! EmployessListViewController
         self.present(nextViewController, animated:true, completion:nil)
+//        let vc = ColorViewController() //change this to your class name
+//        self.present(vc, animated: true, completion: nil)
     }
     
     private func setupView() {
