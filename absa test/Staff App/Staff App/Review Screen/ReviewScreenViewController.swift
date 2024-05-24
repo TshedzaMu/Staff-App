@@ -29,7 +29,6 @@ class ReviewScreenViewController: UIViewController {
     
     private func setupView() {
         personalDetailsStack.applyProfileStyle()
-        additionaInformationLabel.applyProfileStyle()
         submitButton.applyProfileStyle()
     }
 

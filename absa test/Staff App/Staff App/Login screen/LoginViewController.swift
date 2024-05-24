@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     
+    @IBOutlet private weak var loginButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -24,6 +25,7 @@ class LoginViewController: UIViewController {
     private func setupView() {
         emailTextField.applyProfileStyle()
         passwordTextField.applyProfileStyle()
+        loginButton.applyProfileStyle()
     }
     
     @IBAction func loginButton(_ sender: Any) {

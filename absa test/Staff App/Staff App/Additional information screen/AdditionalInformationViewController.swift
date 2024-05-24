@@ -12,7 +12,8 @@ class AdditionalInformationViewController: UIViewController {
     
     @IBOutlet private weak var colorView: UIView!
     @IBOutlet private weak var colorNameLabel: UILabel!
-    @IBOutlet weak var colorStack: UIStackView!
+    @IBOutlet private weak var colorStack: UIStackView!
+    @IBOutlet private weak var residentialAddressTexField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,12 +38,18 @@ class AdditionalInformationViewController: UIViewController {
         }
     }
 
-    
     @IBAction private func genderSegment(_ sender: Any) {
     }
     
     private func setupView() {
-        colorNameLabel.applyProfileStyle()
+        
+        colorStack.applyProfileStyle()
+        residentialAddressTexField.applyProfileStyle()
+
+        assert(colorView.frame.width == colorView.frame.height, "colorView must be a square")
+ 
+        colorView.layer.cornerRadius = colorView.frame.width / 2
+        colorView.layer.masksToBounds = true
     
         colorStack.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(colorStackviewClicked)))
     }
