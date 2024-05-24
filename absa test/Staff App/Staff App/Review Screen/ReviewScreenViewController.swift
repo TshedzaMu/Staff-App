@@ -16,6 +16,7 @@ class ReviewScreenViewController: UIViewController {
     @IBOutlet private weak var informationLabel: UILabel!
     @IBOutlet private weak var additionaInformationLabel: UILabel!
     
+    @IBOutlet private weak var additionalInfoStack: UIStackView!
     @IBOutlet private weak var submitButton: UIButton!
     
     override func viewDidLoad() {
@@ -29,6 +30,7 @@ class ReviewScreenViewController: UIViewController {
     
     private func setupView() {
         personalDetailsStack.applyProfileStyle()
+        additionalInfoStack.applyProfileStyle()
         submitButton.applyProfileStyle()
     }
 

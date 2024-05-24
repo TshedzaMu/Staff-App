@@ -64,7 +64,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6B-pP-z6c">
-                                <rect key="frame" x="163.66666666666666" y="639" width="65.666666666666657" height="34.333333333333371"/>
+                                <rect key="frame" x="10" y="747.66666666666663" width="373" height="34.333333333333371"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Login"/>
@@ -77,15 +77,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="g6B-pP-z6c" firstAttribute="centerX" secondItem="k5e-x7-2TK" secondAttribute="centerX" id="0dG-n6-VJ6"/>
+                            <constraint firstAttribute="trailing" secondItem="g6B-pP-z6c" secondAttribute="trailing" constant="10" id="CtE-0x-8Zl"/>
+                            <constraint firstAttribute="bottom" secondItem="g6B-pP-z6c" secondAttribute="bottom" constant="70" id="CyN-lY-05G"/>
                             <constraint firstAttribute="bottom" secondItem="k5e-x7-2TK" secondAttribute="bottom" constant="289.66666666666674" id="IxD-4v-2y7"/>
-                            <constraint firstItem="g6B-pP-z6c" firstAttribute="top" secondItem="k5e-x7-2TK" secondAttribute="bottom" constant="76.666666666666742" id="R4T-2o-Ra4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="k5e-x7-2TK" secondAttribute="trailing" constant="20" id="Shb-dt-yTz"/>
-                            <constraint firstItem="g6B-pP-z6c" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bCl-3M-3Jb"/>
                             <constraint firstItem="k5e-x7-2TK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jyt-t9-1fl"/>
                             <constraint firstItem="k5e-x7-2TK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="154" id="ow7-Be-fBO"/>
+                            <constraint firstItem="g6B-pP-z6c" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="rK1-F3-zLy"/>
                             <constraint firstItem="k5e-x7-2TK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wnh-lZ-905"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="g6B-pP-z6c" secondAttribute="trailing" id="yix-D5-Zdt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gRt-Ug-oo2"/>
@@ -97,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055.7251908396945" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="1052.6717557251909" y="-2.1126760563380285"/>
         </scene>
         <!--EmployeeInformationScreen-->
         <scene sceneID="HYF-5c-bUS">
