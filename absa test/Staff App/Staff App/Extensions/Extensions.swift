@@ -36,3 +36,11 @@ extension UIImageView {
         }
     }
 }
+
+extension UIView {
+    func applyProfileStyle() {
+        self.layer.cornerRadius = 5
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderWidth = 1
+    }
+}

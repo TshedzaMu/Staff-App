@@ -22,8 +22,7 @@ class ColorViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Initialize the table view
+
         tableView = UITableView(frame: view.bounds)
         tableView.delegate = self
         tableView.dataSource = self
@@ -31,8 +30,7 @@ class ColorViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.register(ColorTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         
         setupTableHeaderView()
-        
-        // Add the table view to the view controller's view
+
         view.addSubview(tableView)
     }
     

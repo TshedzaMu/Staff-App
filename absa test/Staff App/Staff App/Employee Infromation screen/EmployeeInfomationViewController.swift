@@ -40,22 +40,11 @@ class EmployeeInfomationViewController: UIViewController {
     }
     
     private func setupView() {
-        profileStackView.layer.cornerRadius = 5
-        profileStackView.layer.borderColor = UIColor.black.cgColor
-        profileStackView.layer.borderWidth = 1
-        
-        dateOfBirthTextField.layer.cornerRadius = 5
-        dateOfBirthTextField.layer.borderColor = UIColor.black.cgColor
-        dateOfBirthTextField.layer.borderWidth = 1
-        
-        placeOfBirthTextField.layer.cornerRadius = 5
-        placeOfBirthTextField.layer.borderColor = UIColor.black.cgColor
-        placeOfBirthTextField.layer.borderWidth = 1
+        profileStackView.applyProfileStyle()
+        dateOfBirthTextField.applyProfileStyle()
+        placeOfBirthTextField.applyProfileStyle()
         
         profileStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(profileStackviewClicked)))
     }
-    
-    
-    
 }
 

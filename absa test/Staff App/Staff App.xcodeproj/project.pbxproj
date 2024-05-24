@@ -38,6 +38,7 @@
 		31A3BEE42C00C26D00A7C0D4 /* ConfirmationScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A3BEE32C00C26D00A7C0D4 /* ConfirmationScreen.storyboard */; };
 		31A3BEE62C00C2A100A7C0D4 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEE52C00C2A100A7C0D4 /* ConfirmationViewController.swift */; };
 		31A3BEE82C00C2DB00A7C0D4 /* ConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEE72C00C2DB00A7C0D4 /* ConfirmationViewModel.swift */; };
+		31A3BEEA2C00C63100A7C0D4 /* ColorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEE92C00C63100A7C0D4 /* ColorViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		31A3BEE32C00C26D00A7C0D4 /* ConfirmationScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConfirmationScreen.storyboard; sourceTree = "<group>"; };
 		31A3BEE52C00C2A100A7C0D4 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		31A3BEE72C00C2DB00A7C0D4 /* ConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewModel.swift; sourceTree = "<group>"; };
+		31A3BEE92C00C63100A7C0D4 /* ColorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				31A3BED92C00B83300A7C0D4 /* ColorViewController.swift */,
+				31A3BEE92C00C63100A7C0D4 /* ColorViewModel.swift */,
 			);
 			path = "Color Screen";
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 			files = (
 				31A3BEE12C00C22C00A7C0D4 /* ReviewScreenViewModel.swift in Sources */,
 				31A3BEC32BFF71F200A7C0D4 /* EmployessListViewModel.swift in Sources */,
+				31A3BEEA2C00C63100A7C0D4 /* ColorViewModel.swift in Sources */,
 				31A3BEE82C00C2DB00A7C0D4 /* ConfirmationViewModel.swift in Sources */,
 				31A3BED72C00B7E700A7C0D4 /* ColorTableViewCell.swift in Sources */,
 				31A3BEB52BFF686B00A7C0D4 /* LoginViewModel.swift in Sources */,
