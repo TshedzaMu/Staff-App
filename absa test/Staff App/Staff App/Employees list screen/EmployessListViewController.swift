@@ -16,14 +16,18 @@ class EmployessListViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupTableHeaderView()
+    }
     
     func setupTableHeaderView() {
           let headerView = UIView()
-          headerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 60)
+          headerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 65)
           
           let titleLabel = UILabel()
           titleLabel.text = "List Of Employyes"
-          titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
+          titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
           titleLabel.translatesAutoresizingMaskIntoConstraints = false
           
           headerView.addSubview(titleLabel)
