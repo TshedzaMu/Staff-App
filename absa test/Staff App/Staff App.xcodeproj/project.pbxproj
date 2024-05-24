@@ -32,6 +32,12 @@
 		31A3BED42C00B2DB00A7C0D4 /* AdditionalInformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BED32C00B2DB00A7C0D4 /* AdditionalInformationViewModel.swift */; };
 		31A3BED72C00B7E700A7C0D4 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BED62C00B7E700A7C0D4 /* ColorTableViewCell.swift */; };
 		31A3BEDA2C00B83300A7C0D4 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BED92C00B83300A7C0D4 /* ColorViewController.swift */; };
+		31A3BEDD2C00BF4A00A7C0D4 /* ReviewScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A3BEDC2C00BF4A00A7C0D4 /* ReviewScreen.storyboard */; };
+		31A3BEDF2C00BF7300A7C0D4 /* ReviewScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEDE2C00BF7300A7C0D4 /* ReviewScreenViewController.swift */; };
+		31A3BEE12C00C22C00A7C0D4 /* ReviewScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEE02C00C22C00A7C0D4 /* ReviewScreenViewModel.swift */; };
+		31A3BEE42C00C26D00A7C0D4 /* ConfirmationScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A3BEE32C00C26D00A7C0D4 /* ConfirmationScreen.storyboard */; };
+		31A3BEE62C00C2A100A7C0D4 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEE52C00C2A100A7C0D4 /* ConfirmationViewController.swift */; };
+		31A3BEE82C00C2DB00A7C0D4 /* ConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEE72C00C2DB00A7C0D4 /* ConfirmationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +87,12 @@
 		31A3BED32C00B2DB00A7C0D4 /* AdditionalInformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInformationViewModel.swift; sourceTree = "<group>"; };
 		31A3BED62C00B7E700A7C0D4 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
 		31A3BED92C00B83300A7C0D4 /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
+		31A3BEDC2C00BF4A00A7C0D4 /* ReviewScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReviewScreen.storyboard; sourceTree = "<group>"; };
+		31A3BEDE2C00BF7300A7C0D4 /* ReviewScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewScreenViewController.swift; sourceTree = "<group>"; };
+		31A3BEE02C00C22C00A7C0D4 /* ReviewScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewScreenViewModel.swift; sourceTree = "<group>"; };
+		31A3BEE32C00C26D00A7C0D4 /* ConfirmationScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConfirmationScreen.storyboard; sourceTree = "<group>"; };
+		31A3BEE52C00C2A100A7C0D4 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
+		31A3BEE72C00C2DB00A7C0D4 /* ConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +149,8 @@
 				31A3BEBD2BFF712300A7C0D4 /* Employees list screen */,
 				31A3BECE2C00B25200A7C0D4 /* Additional information screen */,
 				31A3BED82C00B81200A7C0D4 /* Color Screen */,
+				31A3BEDB2C00BF1C00A7C0D4 /* Review Screen */,
+				31A3BEE22C00C24D00A7C0D4 /* Confirmation Screen */,
 				31A3BEC42BFF724800A7C0D4 /* Views */,
 				31A3BEC92BFF7C5100A7C0D4 /* Extensions */,
 				31A3BE8B2BFF378E00A7C0D4 /* Assets.xcassets */,
@@ -247,6 +261,26 @@
 			path = "Color Screen";
 			sourceTree = "<group>";
 		};
+		31A3BEDB2C00BF1C00A7C0D4 /* Review Screen */ = {
+			isa = PBXGroup;
+			children = (
+				31A3BEDC2C00BF4A00A7C0D4 /* ReviewScreen.storyboard */,
+				31A3BEDE2C00BF7300A7C0D4 /* ReviewScreenViewController.swift */,
+				31A3BEE02C00C22C00A7C0D4 /* ReviewScreenViewModel.swift */,
+			);
+			path = "Review Screen";
+			sourceTree = "<group>";
+		};
+		31A3BEE22C00C24D00A7C0D4 /* Confirmation Screen */ = {
+			isa = PBXGroup;
+			children = (
+				31A3BEE32C00C26D00A7C0D4 /* ConfirmationScreen.storyboard */,
+				31A3BEE52C00C2A100A7C0D4 /* ConfirmationViewController.swift */,
+				31A3BEE72C00C2DB00A7C0D4 /* ConfirmationViewModel.swift */,
+			);
+			path = "Confirmation Screen";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -351,12 +385,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31A3BEDD2C00BF4A00A7C0D4 /* ReviewScreen.storyboard in Resources */,
 				31A3BEC62BFF726F00A7C0D4 /* EmployeeView.xib in Resources */,
 				31A3BE8F2BFF378E00A7C0D4 /* LaunchScreen.storyboard in Resources */,
 				31A3BEBF2BFF71A300A7C0D4 /* EmployessListScreen.storyboard in Resources */,
 				31A3BED02C00B29500A7C0D4 /* AdditionalInformationScreen.storyboard in Resources */,
 				31A3BE8C2BFF378E00A7C0D4 /* Assets.xcassets in Resources */,
 				31A3BE8A2BFF378D00A7C0D4 /* Login.storyboard in Resources */,
+				31A3BEE42C00C26D00A7C0D4 /* ConfirmationScreen.storyboard in Resources */,
 				31A3BEB82BFF68F600A7C0D4 /* EmployeeInformationScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,7 +418,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31A3BEE12C00C22C00A7C0D4 /* ReviewScreenViewModel.swift in Sources */,
 				31A3BEC32BFF71F200A7C0D4 /* EmployessListViewModel.swift in Sources */,
+				31A3BEE82C00C2DB00A7C0D4 /* ConfirmationViewModel.swift in Sources */,
 				31A3BED72C00B7E700A7C0D4 /* ColorTableViewCell.swift in Sources */,
 				31A3BEB52BFF686B00A7C0D4 /* LoginViewModel.swift in Sources */,
 				31A3BE872BFF378D00A7C0D4 /* LoginViewController.swift in Sources */,
@@ -390,8 +428,10 @@
 				31A3BED42C00B2DB00A7C0D4 /* AdditionalInformationViewModel.swift in Sources */,
 				31A3BEC82BFF72AB00A7C0D4 /* EmployeeView.swift in Sources */,
 				31A3BECB2BFF7C6B00A7C0D4 /* Extensions.swift in Sources */,
+				31A3BEDF2C00BF7300A7C0D4 /* ReviewScreenViewController.swift in Sources */,
 				31A3BECD2BFF843300A7C0D4 /* ProfileViewTableViewCell.swift in Sources */,
 				31A3BEBC2BFF694A00A7C0D4 /* EmployeeInfomationViewModel.swift in Sources */,
+				31A3BEE62C00C2A100A7C0D4 /* ConfirmationViewController.swift in Sources */,
 				31A3BEC12BFF71B600A7C0D4 /* EmployessListViewController.swift in Sources */,
 				31A3BE832BFF378D00A7C0D4 /* AppDelegate.swift in Sources */,
 				31A3BED22C00B2C100A7C0D4 /* AdditionalInformationViewController.swift in Sources */,
