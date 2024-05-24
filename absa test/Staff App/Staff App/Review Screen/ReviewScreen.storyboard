@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="761-N3-zPt">
-                                <rect key="frame" x="16" y="108.00000000000001" width="373" height="127.33333333333336"/>
+                                <rect key="frame" x="16" y="108" width="373" height="127.33333333333334"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnM-ay-iEy">
                                         <rect key="frame" x="0.0" y="0.0" width="373" height="20.333333333333332"/>
@@ -58,9 +58,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROA-sZ-qR4">
-                                <rect key="frame" x="10" y="787.66666666666663" width="373" height="34.333333333333371"/>
+                                <rect key="frame" x="10" y="725" width="373" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Submit"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -75,9 +75,9 @@
                             <constraint firstItem="WnM-ay-iEy" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="10" id="Imx-WY-M7g"/>
                             <constraint firstAttribute="trailing" secondItem="zpL-T1-zYj" secondAttribute="trailing" constant="10" id="Kpa-66-qqJ"/>
                             <constraint firstAttribute="trailing" secondItem="kUu-7D-FsU" secondAttribute="trailing" constant="10" id="LpE-EQ-t6Q"/>
-                            <constraint firstAttribute="bottom" secondItem="ROA-sZ-qR4" secondAttribute="bottom" constant="30" id="Sqi-Bh-V9E"/>
+                            <constraint firstAttribute="bottom" secondItem="ROA-sZ-qR4" secondAttribute="bottom" constant="92.666666666666629" id="Sqi-Bh-V9E"/>
                             <constraint firstAttribute="trailing" secondItem="WnM-ay-iEy" secondAttribute="trailing" constant="10" id="poY-Zj-Ikn"/>
-                            <constraint firstItem="ROA-sZ-qR4" firstAttribute="top" secondItem="kUu-7D-FsU" secondAttribute="bottom" constant="426.66666666666663" id="pzu-58-vbh"/>
+                            <constraint firstItem="ROA-sZ-qR4" firstAttribute="top" secondItem="kUu-7D-FsU" secondAttribute="bottom" constant="364" id="pzu-58-vbh"/>
                             <constraint firstItem="kUu-7D-FsU" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="10" id="uwj-0n-d5Z"/>
                             <constraint firstItem="zpL-T1-zYj" firstAttribute="top" secondItem="yOI-ep-mqI" secondAttribute="bottom" constant="51.666666666666657" id="y5E-RC-Ikh"/>
                         </constraints>
