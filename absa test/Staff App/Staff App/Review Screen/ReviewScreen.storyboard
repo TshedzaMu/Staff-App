@@ -131,11 +131,16 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="additionaInformationLabel" destination="kUu-7D-FsU" id="CyY-z7-9jS"/>
                         <outlet property="additionalInfoStack" destination="ExM-d0-2RU" id="dGz-8p-pp2"/>
-                        <outlet property="informationLabel" destination="Q7b-Gu-fVX" id="ayZ-fV-fKB"/>
+                        <outlet property="dateOfBirthLabel" destination="YjJ-FZ-xU7" id="Un3-R5-dzz"/>
+                        <outlet property="emailLabel" destination="l8T-Vq-rDF" id="jex-LR-lH0"/>
+                        <outlet property="genderLabel" destination="LXY-cX-WmY" id="CuD-6Q-6tN"/>
+                        <outlet property="nameLabel" destination="Q7b-Gu-fVX" id="ayZ-fV-fKB"/>
                         <outlet property="personalDetailsStack" destination="yOI-ep-mqI" id="12O-Ag-IkI"/>
+                        <outlet property="placeOfBirth" destination="kUu-7D-FsU" id="Pao-U4-SfG"/>
+                        <outlet property="prefferedColor" destination="tza-yy-aak" id="TYc-us-HXW"/>
                         <outlet property="profileImage" destination="rNQ-gS-BZK" id="gaa-z0-U9c"/>
+                        <outlet property="residentialAddressLabel" destination="xIb-fY-dOb" id="hZd-Vt-PQF"/>
                         <outlet property="submitButton" destination="ROA-sZ-qR4" id="SiJ-in-fzx"/>
                         <segue destination="J3z-Bh-GpX" kind="show" identifier="confirmationSegue" id="cha-n4-eMD"/>
                     </connections>
