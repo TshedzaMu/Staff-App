@@ -97,10 +97,10 @@
             </objects>
             <point key="canvasLocation" x="1055.7251908396945" y="-2.1126760563380285"/>
         </scene>
-        <!--AdditionaInformationScreen-->
+        <!--EmployeeInformationScreen-->
         <scene sceneID="HYF-5c-bUS">
             <objects>
-                <viewControllerPlaceholder storyboardName="AdditionaInformationScreen" id="DHo-JN-52t" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="EmployeeInformationScreen" id="DHo-JN-52t" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Ibz-sG-lxA"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LrX-M2-p6k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

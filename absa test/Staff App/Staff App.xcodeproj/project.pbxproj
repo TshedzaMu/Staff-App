@@ -17,9 +17,9 @@
 		31A3BEA42BFF378E00A7C0D4 /* Staff_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEA32BFF378E00A7C0D4 /* Staff_AppUITests.swift */; };
 		31A3BEA62BFF378E00A7C0D4 /* Staff_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEA52BFF378E00A7C0D4 /* Staff_AppUITestsLaunchTests.swift */; };
 		31A3BEB52BFF686B00A7C0D4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEB42BFF686B00A7C0D4 /* LoginViewModel.swift */; };
-		31A3BEB82BFF68F600A7C0D4 /* AdditionaInformationScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A3BEB72BFF68F600A7C0D4 /* AdditionaInformationScreen.storyboard */; };
-		31A3BEBA2BFF692000A7C0D4 /* AdditionalInfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEB92BFF692000A7C0D4 /* AdditionalInfomationViewController.swift */; };
-		31A3BEBC2BFF694A00A7C0D4 /* AdditionalInfomationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEBB2BFF694A00A7C0D4 /* AdditionalInfomationViewModel.swift */; };
+		31A3BEB82BFF68F600A7C0D4 /* EmployeeInformationScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A3BEB72BFF68F600A7C0D4 /* EmployeeInformationScreen.storyboard */; };
+		31A3BEBA2BFF692000A7C0D4 /* EmployeeInfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEB92BFF692000A7C0D4 /* EmployeeInfomationViewController.swift */; };
+		31A3BEBC2BFF694A00A7C0D4 /* EmployeeInfomationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEBB2BFF694A00A7C0D4 /* EmployeeInfomationViewModel.swift */; };
 		31A3BEBF2BFF71A300A7C0D4 /* EmployessListScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A3BEBE2BFF71A300A7C0D4 /* EmployessListScreen.storyboard */; };
 		31A3BEC12BFF71B600A7C0D4 /* EmployessListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEC02BFF71B600A7C0D4 /* EmployessListViewController.swift */; };
 		31A3BEC32BFF71F200A7C0D4 /* EmployessListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEC22BFF71F200A7C0D4 /* EmployessListViewModel.swift */; };
@@ -61,9 +61,9 @@
 		31A3BEA32BFF378E00A7C0D4 /* Staff_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff_AppUITests.swift; sourceTree = "<group>"; };
 		31A3BEA52BFF378E00A7C0D4 /* Staff_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		31A3BEB42BFF686B00A7C0D4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		31A3BEB72BFF68F600A7C0D4 /* AdditionaInformationScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdditionaInformationScreen.storyboard; sourceTree = "<group>"; };
-		31A3BEB92BFF692000A7C0D4 /* AdditionalInfomationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfomationViewController.swift; sourceTree = "<group>"; };
-		31A3BEBB2BFF694A00A7C0D4 /* AdditionalInfomationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfomationViewModel.swift; sourceTree = "<group>"; };
+		31A3BEB72BFF68F600A7C0D4 /* EmployeeInformationScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmployeeInformationScreen.storyboard; sourceTree = "<group>"; };
+		31A3BEB92BFF692000A7C0D4 /* EmployeeInfomationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeInfomationViewController.swift; sourceTree = "<group>"; };
+		31A3BEBB2BFF694A00A7C0D4 /* EmployeeInfomationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeInfomationViewModel.swift; sourceTree = "<group>"; };
 		31A3BEBE2BFF71A300A7C0D4 /* EmployessListScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmployessListScreen.storyboard; sourceTree = "<group>"; };
 		31A3BEC02BFF71B600A7C0D4 /* EmployessListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployessListViewController.swift; sourceTree = "<group>"; };
 		31A3BEC22BFF71F200A7C0D4 /* EmployessListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployessListViewModel.swift; sourceTree = "<group>"; };
@@ -173,9 +173,9 @@
 		31A3BEB62BFF68B100A7C0D4 /* Additional Infromation screen */ = {
 			isa = PBXGroup;
 			children = (
-				31A3BEB72BFF68F600A7C0D4 /* AdditionaInformationScreen.storyboard */,
-				31A3BEB92BFF692000A7C0D4 /* AdditionalInfomationViewController.swift */,
-				31A3BEBB2BFF694A00A7C0D4 /* AdditionalInfomationViewModel.swift */,
+				31A3BEB72BFF68F600A7C0D4 /* EmployeeInformationScreen.storyboard */,
+				31A3BEB92BFF692000A7C0D4 /* EmployeeInfomationViewController.swift */,
+				31A3BEBB2BFF694A00A7C0D4 /* EmployeeInfomationViewModel.swift */,
 			);
 			path = "Additional Infromation screen";
 			sourceTree = "<group>";
@@ -317,7 +317,7 @@
 				31A3BEBF2BFF71A300A7C0D4 /* EmployessListScreen.storyboard in Resources */,
 				31A3BE8C2BFF378E00A7C0D4 /* Assets.xcassets in Resources */,
 				31A3BE8A2BFF378D00A7C0D4 /* Login.storyboard in Resources */,
-				31A3BEB82BFF68F600A7C0D4 /* AdditionaInformationScreen.storyboard in Resources */,
+				31A3BEB82BFF68F600A7C0D4 /* EmployeeInformationScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,11 +345,11 @@
 				31A3BEC32BFF71F200A7C0D4 /* EmployessListViewModel.swift in Sources */,
 				31A3BEB52BFF686B00A7C0D4 /* LoginViewModel.swift in Sources */,
 				31A3BE872BFF378D00A7C0D4 /* LoginViewController.swift in Sources */,
-				31A3BEBA2BFF692000A7C0D4 /* AdditionalInfomationViewController.swift in Sources */,
+				31A3BEBA2BFF692000A7C0D4 /* EmployeeInfomationViewController.swift in Sources */,
 				31A3BEC82BFF72AB00A7C0D4 /* EmployeeView.swift in Sources */,
 				31A3BECB2BFF7C6B00A7C0D4 /* Extensions.swift in Sources */,
 				31A3BECD2BFF843300A7C0D4 /* ProfileViewTableViewCell.swift in Sources */,
-				31A3BEBC2BFF694A00A7C0D4 /* AdditionalInfomationViewModel.swift in Sources */,
+				31A3BEBC2BFF694A00A7C0D4 /* EmployeeInfomationViewModel.swift in Sources */,
 				31A3BEC12BFF71B600A7C0D4 /* EmployessListViewController.swift in Sources */,
 				31A3BE832BFF378D00A7C0D4 /* AppDelegate.swift in Sources */,
 				31A3BE852BFF378D00A7C0D4 /* SceneDelegate.swift in Sources */,

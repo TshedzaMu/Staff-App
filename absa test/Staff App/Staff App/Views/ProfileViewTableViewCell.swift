@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class ProfileViewTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var employeeView: EmployeeView!
     
     override func awakeFromNib() {

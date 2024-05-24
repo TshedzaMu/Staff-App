@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class AdditionalInfomationViewController: UIViewController {
+class EmployeeInfomationViewController: UIViewController {
     
     @IBOutlet weak var profileImageView: UIImageView!
     
