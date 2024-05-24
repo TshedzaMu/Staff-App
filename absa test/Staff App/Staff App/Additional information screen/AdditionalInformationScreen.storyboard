@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Additional Information View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="AdditionalInformationViewController" customModule="Staff_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,6 +29,9 @@
                                     <segment title="Female"/>
                                     <segment title="Other"/>
                                 </segments>
+                                <connections>
+                                    <action selector="genderSegment:" destination="yti-3m-NRx" eventType="valueChanged" id="VUQ-Y0-XLS"/>
+                                </connections>
                             </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="cEl-S6-gyC">
                                 <rect key="frame" x="10" y="242.00000000000003" width="373" height="89.333333333333343"/>
@@ -42,21 +45,29 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="94" translatesAutoresizingMaskIntoConstraints="NO" id="QhI-xs-B6i">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="94" translatesAutoresizingMaskIntoConstraints="NO" id="QhI-xs-B6i">
                                         <rect key="frame" x="0.0" y="39.333333333333314" width="373" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLG-te-y4e">
-                                                <rect key="frame" x="0.0" y="0.0" width="49" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="7es-fK-GH2"/>
+                                                    <constraint firstAttribute="width" constant="50" id="QDf-qI-tOI"/>
+                                                </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8P-Tq-R52">
-                                                <rect key="frame" x="143" y="0.0" width="87.333333333333314" height="50"/>
+                                                <rect key="frame" x="144" y="0.0" width="85" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GBm-R1-kEf">
-                                                <rect key="frame" x="324.33333333333331" y="0.0" width="48.666666666666686" height="50"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greaterthan" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="GBm-R1-kEf">
+                                                <rect key="frame" x="353" y="3.6666666666666643" width="20" height="43"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="RT0-1O-v6c"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="yoi-Dw-Afz"/>
+                                                </constraints>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -93,13 +104,19 @@
                             <constraint firstItem="j9b-lF-wuX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="103" id="pbg-b1-a2l"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="colorNameLabel" destination="N8P-Tq-R52" id="KCg-e9-UHb"/>
+                        <outlet property="colorView" destination="WLG-te-y4e" id="mBj-rt-pyB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="yti-3m-NRx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="116.79389312977099" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
+        <image name="greaterthan" catalog="system" width="128" height="108"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

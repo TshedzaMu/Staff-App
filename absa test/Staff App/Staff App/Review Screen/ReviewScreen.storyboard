@@ -82,6 +82,12 @@
                             <constraint firstItem="zpL-T1-zYj" firstAttribute="top" secondItem="yOI-ep-mqI" secondAttribute="bottom" constant="51.666666666666657" id="y5E-RC-Ikh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="additionaInformationLabel" destination="kUu-7D-FsU" id="CyY-z7-9jS"/>
+                        <outlet property="informationLabel" destination="Q7b-Gu-fVX" id="ayZ-fV-fKB"/>
+                        <outlet property="personalDetailsStack" destination="yOI-ep-mqI" id="12O-Ag-IkI"/>
+                        <outlet property="profileImage" destination="rNQ-gS-BZK" id="gaa-z0-U9c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
