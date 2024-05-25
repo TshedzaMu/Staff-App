@@ -20,7 +20,7 @@ class EmployeeInfomationViewController: UIViewController {
     @IBOutlet private weak var dateOfBirthTextField: UITextField!
     @IBOutlet private weak var placeOfBirthTextField: UITextField!
     
-    var dataTransporter: EmployeeInformationDataTransporter!
+    var dataTransporter =  EmployeeInformationDataTransporter()
     
 
     private lazy var viewModel = EmployeeInfomationViewModel(dataTransporter: dataTransporter)
@@ -49,6 +49,7 @@ class EmployeeInfomationViewController: UIViewController {
     }
     
     @objc func nextButtonTapped() {
+        updateDataTransporter()
         performSegue(withIdentifier: "additionalInformationSegue", sender: nil)
     }
     
@@ -66,6 +67,16 @@ class EmployeeInfomationViewController: UIViewController {
         placeOfBirthTextField.applyProfileStyle()
         
         profileStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(profileStackviewClicked)))
+    }
+    
+    private func updateDataTransporter() {
+        viewModel.dataTransporter.id = viewModel.selectedEmployee?.id
+        viewModel.dataTransporter.email = viewModel.selectedEmployee?.email
+        viewModel.dataTransporter.firstName = viewModel.selectedEmployee?.first_name
+        viewModel.dataTransporter.lastName = viewModel.selectedEmployee?.last_name
+        viewModel.dataTransporter.avatar = viewModel.selectedEmployee?.avatar
+        viewModel.dataTransporter.dateOfBirth = dateOfBirthTextField.text
+        viewModel.dataTransporter.placeOfBirth = placeOfBirthTextField.text
     }
 }
 

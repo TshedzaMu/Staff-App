@@ -28,10 +28,12 @@ class AdditionalInformationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print(dataTransporter.description)
         setupView()
     }
     
     @objc func nextButtonTapped() {
+        updateDataTransporter()
         performSegue(withIdentifier: "reviewSegue", sender: nil)
     }
     
@@ -43,9 +45,13 @@ class AdditionalInformationViewController: UIViewController {
         }
     }
 
-    @IBAction private func genderSegment(_ sender: Any) {
+    @IBAction private func genderSegment(_ sender: UISegmentedControl) {
+        guard let selectedGender = Gender(rawValue: sender.titleForSegment(at: sender.selectedSegmentIndex) ?? "") else {
+             return
+         }
+         viewModel.dataTransporter.gender = selectedGender.rawValue
     }
-    
+
     private func setupView() {
         
         colorStack.applyProfileStyle()
@@ -58,6 +64,12 @@ class AdditionalInformationViewController: UIViewController {
     
         colorStack.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(colorStackviewClicked)))
     }
+    
+    private func updateDataTransporter() {
+        viewModel.dataTransporter.residentialAddress = residentialAddressTexField.text
+        viewModel.dataTransporter.preferredColor = viewModel.selectedColor?.color
+    }
+
     
     @objc func colorStackviewClicked() {
         let viewController = ColorViewController()

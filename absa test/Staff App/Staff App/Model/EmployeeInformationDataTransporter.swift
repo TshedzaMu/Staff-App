@@ -8,16 +8,16 @@
 import Foundation
 
 class EmployeeInformationDataTransporter {
-    let id: Int?
-    let email: String?
-    let firstName: String?
-    let lastName: String?
-    let avatar: String?
-    let dateOfBirth: String?
-    let gender: String?
-    let placeOfBirth: String?
-    let preferredColor: String?
-    let residentialAddress: String?
+    var id: Int?
+    var email: String?
+    var firstName: String?
+    var lastName: String?
+    var avatar: String?
+    var dateOfBirth: String?
+    var gender: String?
+    var placeOfBirth: String?
+    var preferredColor: String?
+    var residentialAddress: String?
 
     init(id: Int? = nil, email: String? = nil, firstName: String? = nil, lastName: String? = nil, avatar: String? = nil, dateOfBirth: String? = nil, gender: String? = nil, placeOfBirth: String? = nil, preferredColor: String? = nil, residentialAddress: String? = nil) {
         self.id = id
@@ -30,5 +30,20 @@ class EmployeeInformationDataTransporter {
         self.placeOfBirth = placeOfBirth
         self.preferredColor = preferredColor
         self.residentialAddress = residentialAddress
+    }
+    
+    var description: String {
+        var description = "Employee Information Data Transporter:\n"
+        description += "ID: \(id ?? -1)\n"
+        description += "Email: \(email ?? "N/A")\n"
+        description += "First Name: \(firstName ?? "N/A")\n"
+        description += "Last Name: \(lastName ?? "N/A")\n"
+        description += "Avatar: \(avatar ?? "N/A")\n"
+        description += "Date of Birth: \(dateOfBirth ?? "N/A")\n"
+        description += "Gender: \(gender ?? "N/A")\n"
+        description += "Place of Birth: \(placeOfBirth ?? "N/A")\n"
+        description += "Preferred Color: \(preferredColor ?? "N/A")\n"
+        description += "Residential Address: \(residentialAddress ?? "N/A")"
+        return description
     }
 }

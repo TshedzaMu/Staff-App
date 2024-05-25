@@ -7,6 +7,12 @@
 
 import Foundation
 
+enum Gender: String {
+    case male = "Male"
+    case female = "Female"
+    case other = "Other"
+}
+
 class AdditionalInformationViewModel {
     
     var dataTransporter: EmployeeInformationDataTransporter

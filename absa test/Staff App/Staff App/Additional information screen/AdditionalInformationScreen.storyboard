@@ -24,7 +24,7 @@
                                     <segment title="Other"/>
                                 </segments>
                                 <connections>
-                                    <action selector="genderSegment:" destination="yti-3m-NRx" eventType="valueChanged" id="VUQ-Y0-XLS"/>
+                                    <action selector="genderSegment:" destination="Y6W-OH-hqX" eventType="valueChanged" id="vOv-1Z-5u5"/>
                                 </connections>
                             </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="cEl-S6-gyC">
@@ -102,7 +102,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="yti-3m-NRx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="116.79389312977099" y="-2.1126760563380285"/>
         </scene>

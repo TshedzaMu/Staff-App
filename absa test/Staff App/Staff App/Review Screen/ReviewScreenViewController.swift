@@ -34,6 +34,7 @@ class ReviewScreenViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print(dataTransporter.description)
         setupView()
     }
     
