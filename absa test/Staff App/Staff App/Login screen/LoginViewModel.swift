@@ -20,7 +20,7 @@ class LoginViewModel {
         let loginRequest = LoginRequest(email: email, password: password)
         service.login(body: loginRequest) { response, error in
             if let response = response {
-                print("Login successful, token: \(response.token)")
+                print("Login successful, token: \(response.token ?? "")")
                 TokenManager.shared.saveToken(response.token ?? "")
                 if response.token == nil {
                     self.delegate?.didFailToLogin(withError: "Invalid token")

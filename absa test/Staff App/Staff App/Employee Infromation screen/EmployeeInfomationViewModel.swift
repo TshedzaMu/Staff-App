@@ -10,6 +10,11 @@ import Foundation
 class EmployeeInfomationViewModel {
     
     var selectedEmployee: Employee?
+    var dataTransporter: EmployeeInformationDataTransporter
+    
+    init(dataTransporter: EmployeeInformationDataTransporter) {
+        self.dataTransporter = dataTransporter
+    }
     
     var employeeFirstName: String? {
         return selectedEmployee?.first_name
@@ -28,7 +33,8 @@ class EmployeeInfomationViewModel {
     }
     
     var imageURL: String {
-        selectedEmployee?.avatar ?? ""
+        return selectedEmployee?.avatar ?? ""
     }
     
 }
+

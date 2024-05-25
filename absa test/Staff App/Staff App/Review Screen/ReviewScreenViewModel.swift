@@ -9,4 +9,9 @@ import Foundation
 
 class ReviewScreenViewModel {
     
+    var dataTransporter: EmployeeInformationDataTransporter
+    
+    init(dataTransporter: EmployeeInformationDataTransporter) {
+        self.dataTransporter = dataTransporter
+    }
 }

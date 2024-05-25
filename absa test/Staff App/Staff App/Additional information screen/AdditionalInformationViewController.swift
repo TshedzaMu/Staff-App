@@ -15,7 +15,9 @@ class AdditionalInformationViewController: UIViewController {
     @IBOutlet private weak var colorStack: UIStackView!
     @IBOutlet private weak var residentialAddressTexField: UITextField!
     
-    private lazy var viewModel = AdditionalInformationViewModel()
+    private lazy var viewModel = AdditionalInformationViewModel(dataTransporter: dataTransporter)
+    
+    var dataTransporter: EmployeeInformationDataTransporter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +37,8 @@ class AdditionalInformationViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "reviewSegue" {
-            if segue.destination is ReviewScreenViewController {
+            if let reviewScreenVC = segue.destination as? ReviewScreenViewController {
+                reviewScreenVC.dataTransporter = self.dataTransporter
             }
         }
     }

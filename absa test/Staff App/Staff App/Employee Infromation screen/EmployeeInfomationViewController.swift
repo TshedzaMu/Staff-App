@@ -20,7 +20,10 @@ class EmployeeInfomationViewController: UIViewController {
     @IBOutlet private weak var dateOfBirthTextField: UITextField!
     @IBOutlet private weak var placeOfBirthTextField: UITextField!
     
-    private lazy var viewModel = EmployeeInfomationViewModel()
+    var dataTransporter: EmployeeInformationDataTransporter!
+    
+
+    private lazy var viewModel = EmployeeInfomationViewModel(dataTransporter: dataTransporter)
     
    
     override func viewDidLoad() {
@@ -30,24 +33,25 @@ class EmployeeInfomationViewController: UIViewController {
 
     }
     
-    @objc func nextButtonTapped() {
-        performSegue(withIdentifier: "additionalInformationSegue", sender: nil)
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.hidesBackButton = true
+        print(TokenManager.shared.getToken())
         setupView()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "additionalInformationSegue" {
-            if segue.destination is AdditionalInformationViewController {
+            if let additionalInfoVC = segue.destination as? AdditionalInformationViewController {
+                additionalInfoVC.dataTransporter = self.dataTransporter
             }
         }
     }
     
-
+    @objc func nextButtonTapped() {
+        performSegue(withIdentifier: "additionalInformationSegue", sender: nil)
+    }
+    
     @objc func profileStackviewClicked() {
          print("works")
         let storyBoard : UIStoryboard = UIStoryboard(name: "EmployessListScreen", bundle:nil)

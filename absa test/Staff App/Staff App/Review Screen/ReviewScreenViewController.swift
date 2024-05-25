@@ -24,6 +24,10 @@ class ReviewScreenViewController: UIViewController {
     @IBOutlet private weak var additionalInfoStack: UIStackView!
     @IBOutlet private weak var submitButton: UIButton!
     
+    var dataTransporter: EmployeeInformationDataTransporter!
+    
+    private lazy var viewModel = ReviewScreenViewModel(dataTransporter: dataTransporter)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

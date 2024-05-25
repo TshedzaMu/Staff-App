@@ -9,6 +9,12 @@ import Foundation
 
 class AdditionalInformationViewModel {
     
+    var dataTransporter: EmployeeInformationDataTransporter
+    
+    init(dataTransporter: EmployeeInformationDataTransporter) {
+        self.dataTransporter = dataTransporter
+    }
+    
      var selectedColor: Color?
     
     var colorName: String? {

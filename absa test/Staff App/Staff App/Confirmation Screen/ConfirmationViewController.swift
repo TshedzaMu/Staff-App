@@ -13,6 +13,10 @@ class ConfirmationViewController: UIViewController {
     @IBOutlet private weak var resultsLabel: UILabel!
     @IBOutlet private weak var resultsMessageLabel: UILabel!
     
+    var dataTransporter: EmployeeInformationDataTransporter!
+    
+    private lazy var viewModel = ConfirmationViewModel(dataTransporter: dataTransporter)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

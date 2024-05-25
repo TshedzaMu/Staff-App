@@ -43,6 +43,7 @@
 		31A3BEF02C0117F100A7C0D4 /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEEF2C0117F100A7C0D4 /* RequestModel.swift */; };
 		31A3BEF22C01180200A7C0D4 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEF12C01180200A7C0D4 /* ResponseModel.swift */; };
 		31A3BEF42C02776000A7C0D4 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEF32C02776000A7C0D4 /* TokenManager.swift */; };
+		31A3BEF62C0286EF00A7C0D4 /* EmployeeInformationDataTransporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEF52C0286EF00A7C0D4 /* EmployeeInformationDataTransporter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		31A3BEEF2C0117F100A7C0D4 /* RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
 		31A3BEF12C01180200A7C0D4 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		31A3BEF32C02776000A7C0D4 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		31A3BEF52C0286EF00A7C0D4 /* EmployeeInformationDataTransporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeInformationDataTransporter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +310,7 @@
 			children = (
 				31A3BEEF2C0117F100A7C0D4 /* RequestModel.swift */,
 				31A3BEF12C01180200A7C0D4 /* ResponseModel.swift */,
+				31A3BEF52C0286EF00A7C0D4 /* EmployeeInformationDataTransporter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				31A3BED72C00B7E700A7C0D4 /* ColorTableViewCell.swift in Sources */,
 				31A3BEB52BFF686B00A7C0D4 /* LoginViewModel.swift in Sources */,
 				31A3BE872BFF378D00A7C0D4 /* LoginViewController.swift in Sources */,
+				31A3BEF62C0286EF00A7C0D4 /* EmployeeInformationDataTransporter.swift in Sources */,
 				31A3BEF02C0117F100A7C0D4 /* RequestModel.swift in Sources */,
 				31A3BEBA2BFF692000A7C0D4 /* EmployeeInfomationViewController.swift in Sources */,
 				31A3BEED2C00D07200A7C0D4 /* Service.swift in Sources */,

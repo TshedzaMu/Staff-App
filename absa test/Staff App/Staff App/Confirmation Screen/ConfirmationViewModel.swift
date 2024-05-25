@@ -9,4 +9,10 @@ import Foundation
 
 class ConfirmationViewModel {
     
+    var dataTransporter: EmployeeInformationDataTransporter
+    
+    init(dataTransporter: EmployeeInformationDataTransporter) {
+        self.dataTransporter = dataTransporter
+    }
+    
 }
