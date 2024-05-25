@@ -20,7 +20,9 @@ class EmployeeInfomationViewController: UIViewController {
     @IBOutlet private weak var dateOfBirthTextField: UITextField!
     @IBOutlet private weak var placeOfBirthTextField: UITextField!
     
+    private lazy var viewModel = EmployeeInfomationViewModel()
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         let nextButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(addButtonTapped))
@@ -48,8 +50,9 @@ class EmployeeInfomationViewController: UIViewController {
     @objc func profileStackviewClicked() {
          print("works")
         let storyBoard : UIStoryboard = UIStoryboard(name: "EmployessListScreen", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ListViewController") as! EmployessListViewController
-        self.present(nextViewController, animated:true, completion:nil)
+        let employeeViewController = storyBoard.instantiateViewController(withIdentifier: "ListViewController") as! EmployessListViewController
+        employeeViewController.delegate = self
+        self.present(employeeViewController, animated:true, completion:nil)
     }
     
     private func setupView() {
@@ -58,5 +61,18 @@ class EmployeeInfomationViewController: UIViewController {
         placeOfBirthTextField.applyProfileStyle()
         
         profileStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(profileStackviewClicked)))
+    }
+}
+
+extension EmployeeInfomationViewController: EmployeeSelectionDelegate {
+    func didSelectEmployee(_ employee: Employee) {
+        viewModel.selectedEmployee = employee
+        updateViewWithDetails()
+    }
+    
+     private func updateViewWithDetails() {
+        profileImageView.load(urlString: viewModel.imageURL)
+        nameLabel.text = viewModel.fullName
+        emailLabel.text = viewModel.email
     }
 }

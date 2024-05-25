@@ -15,6 +15,8 @@ class AdditionalInformationViewController: UIViewController {
     @IBOutlet private weak var colorStack: UIStackView!
     @IBOutlet private weak var residentialAddressTexField: UITextField!
     
+    private lazy var viewModel = AdditionalInformationViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let nextButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextButtonTapped))
@@ -56,6 +58,15 @@ class AdditionalInformationViewController: UIViewController {
     
     @objc func colorStackviewClicked() {
         let viewController = ColorViewController()
+        viewController.delegate = self
         self.present(viewController, animated: true, completion: nil)
+    }
+}
+
+extension AdditionalInformationViewController: ColorSelectionDelegate {
+    func didSelectColor(_ color: Color) {
+        viewModel.selectedColor = color
+        colorView.backgroundColor = UIColor(hex: viewModel.color ?? "")
+        colorNameLabel.text = viewModel.colorName
     }
 }

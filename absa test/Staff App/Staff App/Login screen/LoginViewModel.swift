@@ -9,7 +9,8 @@ import Foundation
 
 class LoginViewModel {
     
-    let service = Service()
+    private lazy var service = Service()
+    
     let loginRequest = LoginRequest(email: "eve.holt@reqres.in", password: "cityslicka")
     
     func login()  {

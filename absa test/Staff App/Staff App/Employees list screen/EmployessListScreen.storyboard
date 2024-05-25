@@ -47,7 +47,7 @@
                     </tableView>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="EmployeesListTableView" destination="eIV-6r-jja" id="CMY-bd-VGg"/>
+                        <outlet property="employeesListTableView" destination="eIV-6r-jja" id="CMY-bd-VGg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OgG-Qk-zAo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

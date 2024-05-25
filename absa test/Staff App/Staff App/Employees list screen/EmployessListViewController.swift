@@ -10,10 +10,19 @@ import UIKit
 
 class EmployessListViewController: UIViewController {
     
-    @IBOutlet private var EmployeesListTableView: UITableView!
+    private lazy var viewModel = EmployessListViewModel()
+    weak var delegate: EmployeeSelectionDelegate?
+    
+    @IBOutlet private var employeesListTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel.onEmployeesFetched = { [weak self] in
+            self?.employeesListTableView.reloadData()
+        }
+        
+        viewModel.getEmployeeList()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -37,28 +46,34 @@ class EmployessListViewController: UIViewController {
               titleLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
           ])
           
-          EmployeesListTableView.tableHeaderView = headerView
+          employeesListTableView.tableHeaderView = headerView
       }
 }
 
 extension EmployessListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      //  return viewModel.coutriesListNumber
-        return 3
+        guard let numberOfEmployees = viewModel.numberOfEmployees else { return 0 }
+        return numberOfEmployees
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PROFILE_CELL", for: indexPath) as! ProfileViewTableViewCell
         guard let view = EmployeeView.loadView() else { return UITableViewCell() }
-//        view.setupView(countryName: viewModel.countriesList?[indexPath.row].name ?? "", urlString: viewModel.countriesList?[indexPath.row].flags?.png ?? "")
+        if let employeeInfo = viewModel.employeeList?[indexPath.row] {
+            view.setupView(name: employeeInfo.first_name ?? "",
+                           email: employeeInfo.email ?? "",
+                           urlString: employeeInfo.avatar ?? "")
+        }
         cell.contentView.addSubview(view)
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let selectedCountry =  viewModel.countriesList?[indexPath.row]
-//        delegate?.transitionToHomeScreen(with: selectedCountry)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let employeeInfo = viewModel.employeeList?[indexPath.row] {
+            delegate?.didSelectEmployee(employeeInfo)
+            self.dismiss(animated: true)
+        }
+    }
 }
 

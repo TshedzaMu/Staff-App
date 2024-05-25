@@ -9,4 +9,13 @@ import Foundation
 
 class AdditionalInformationViewModel {
     
+     var selectedColor: Color?
+    
+    var colorName: String? {
+        selectedColor?.name
+    }
+    
+    var color: String? {
+        selectedColor?.color
+    }
 }

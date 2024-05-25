@@ -10,15 +10,11 @@ import UIKit
 
 class ColorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    private lazy var viewModel = ColorViewModel()
+    weak var delegate: ColorSelectionDelegate?
+    
     var tableView: UITableView!
     let cellIdentifier = "ColorCell"
-    let colors: [(name: String, color: UIColor)] = [
-        (name: "Red", color: .red),
-        (name: "Green", color: .green),
-        (name: "Blue", color: .blue),
-        (name: "Yellow", color: .yellow),
-        (name: "Purple", color: .purple)
-    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +28,12 @@ class ColorViewController: UIViewController, UITableViewDelegate, UITableViewDat
         setupTableHeaderView()
 
         view.addSubview(tableView)
+        
+        viewModel.onColorsFetched = { [weak self] in
+            self?.tableView.reloadData()
+        }
+        
+        viewModel.getColors()
     }
     
     func setupTableHeaderView() {
@@ -56,16 +58,18 @@ class ColorViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return colors.count
+        guard let numberOfEmployees = viewModel.numberOfColors else { return 0 }
+        return numberOfEmployees
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ColorTableViewCell else {
             return UITableViewCell()
         }
-        let colorInfo = colors[indexPath.row]
-        cell.colorView.backgroundColor = colorInfo.color
-        cell.colorNameLabel.text = colorInfo.name
+        if let colorInfo = viewModel.colorList?[indexPath.row] {
+            cell.colorView.backgroundColor = UIColor(hex: colorInfo.color ?? "")
+            cell.colorNameLabel.text = colorInfo.name
+        }
         return cell
     }
     
@@ -73,8 +77,10 @@ class ColorViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let colorInfo = colors[indexPath.row]
-        print("Selected \(colorInfo.name)")
+        if let colorInfo = viewModel.colorList?[indexPath.row] {
+            delegate?.didSelectColor(colorInfo)
+            self.dismiss(animated: true)
+        }
     }
 }
 

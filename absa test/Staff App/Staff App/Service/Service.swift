@@ -101,4 +101,22 @@ class Service {
         }
         makePostRequest(url: url, body: body, completion: completed)
     }
+    
+    func getEmployees(completed: @escaping SuccessHandler<EmployeesResponse>) {
+        let urlString = "https://reqres.in/api/users?page=1&per_page=12"
+        guard let url = URL(string: urlString) else {
+            completed(nil, "Invalid URL")
+            return
+        }
+        makeGetRequest(url: url, completion: completed)
+    }
+    
+    func getColors(completed: @escaping SuccessHandler<ColorsResponse>) {
+        let urlString = "https://reqres.in/api/unknown?per_page=12"
+        guard let url = URL(string: urlString) else {
+            completed(nil, "Invalid URL")
+            return
+        }
+        makeGetRequest(url: url, completion: completed)
+    }
 }

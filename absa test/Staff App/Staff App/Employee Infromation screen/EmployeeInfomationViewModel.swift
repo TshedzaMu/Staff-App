@@ -9,4 +9,26 @@ import Foundation
 
 class EmployeeInfomationViewModel {
     
+    var selectedEmployee: Employee?
+    
+    var employeeFirstName: String? {
+        return selectedEmployee?.first_name
+    }
+    
+    var employeeLastName: String? {
+        return selectedEmployee?.last_name
+    }
+    
+    var fullName: String {
+        return "\(employeeFirstName ?? "") \(employeeLastName ?? "")"
+    }
+    
+    var email: String? {
+        return selectedEmployee?.email
+    }
+    
+    var imageURL: String {
+        selectedEmployee?.avatar ?? ""
+    }
+    
 }
