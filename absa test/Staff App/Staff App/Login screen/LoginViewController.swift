@@ -25,6 +25,10 @@ class LoginViewController: UIViewController {
        
        override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
+         
+           if TokenManager.shared.getToken() != nil {
+              performSegue(withIdentifier: "employeeInformationSegue", sender: self)
+            }
            setupView()
        }
        

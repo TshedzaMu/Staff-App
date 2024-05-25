@@ -25,17 +25,18 @@ class EmployeeInfomationViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nextButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(addButtonTapped))
+        let nextButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextButtonTapped))
         navigationItem.rightBarButtonItem = nextButton
-        navigationItem.leftBarButtonItem?.isHidden = true
+
     }
     
-    @objc func addButtonTapped() {
+    @objc func nextButtonTapped() {
         performSegue(withIdentifier: "additionalInformationSegue", sender: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationItem.hidesBackButton = true
         setupView()
     }
     
