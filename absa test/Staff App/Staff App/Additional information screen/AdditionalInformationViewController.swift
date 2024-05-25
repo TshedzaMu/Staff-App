@@ -14,6 +14,7 @@ class AdditionalInformationViewController: UIViewController {
     @IBOutlet private weak var colorNameLabel: UILabel!
     @IBOutlet private weak var colorStack: UIStackView!
     @IBOutlet private weak var residentialAddressTexField: UITextField!
+    @IBOutlet weak var genderSegmentControl: UISegmentedControl!
     
     private lazy var viewModel = AdditionalInformationViewModel(dataTransporter: dataTransporter)
     
@@ -28,6 +29,8 @@ class AdditionalInformationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        updateGenderSegmentControl()
+        print(viewModel.dataTransporter.gender)
         print(dataTransporter.description)
         setupView()
     }
@@ -51,6 +54,21 @@ class AdditionalInformationViewController: UIViewController {
          }
          viewModel.dataTransporter.gender = selectedGender.rawValue
     }
+    
+    private func updateGenderSegmentControl() {
+        guard let gender = Gender(rawValue: viewModel.dataTransporter.gender ?? "") else {
+              return
+          }
+          
+          switch gender {
+          case .male:
+              genderSegmentControl.selectedSegmentIndex = 0
+          case .female:
+              genderSegmentControl.selectedSegmentIndex = 1
+          case .other:
+              genderSegmentControl.selectedSegmentIndex = 2
+          }
+      }
 
     private func setupView() {
         
@@ -66,8 +84,9 @@ class AdditionalInformationViewController: UIViewController {
     }
     
     private func updateDataTransporter() {
+        viewModel.dataTransporter.gender = "Male"
         viewModel.dataTransporter.residentialAddress = residentialAddressTexField.text
-        viewModel.dataTransporter.preferredColor = viewModel.selectedColor?.color
+        viewModel.dataTransporter.preferredColor = viewModel.colorName
     }
 
     

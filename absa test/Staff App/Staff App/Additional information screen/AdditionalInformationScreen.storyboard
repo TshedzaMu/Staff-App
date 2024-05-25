@@ -97,6 +97,7 @@
                         <outlet property="colorNameLabel" destination="N8P-Tq-R52" id="KCg-e9-UHb"/>
                         <outlet property="colorStack" destination="QhI-xs-B6i" id="gnt-HY-81j"/>
                         <outlet property="colorView" destination="WLG-te-y4e" id="mBj-rt-pyB"/>
+                        <outlet property="genderSegmentControl" destination="j9b-lF-wuX" id="m80-08-SIZ"/>
                         <outlet property="residentialAddressTexField" destination="WaT-B6-IUa" id="s7t-T9-kId"/>
                         <segue destination="qrj-bP-N9a" kind="show" identifier="reviewSegue" id="dKj-9u-fUG"/>
                     </connections>

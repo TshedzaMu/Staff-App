@@ -13,14 +13,15 @@ class ReviewScreenViewController: UIViewController {
     
     @IBOutlet private weak var profileImage: UIImageView!
     @IBOutlet private weak var personalDetailsStack: UIStackView!
+    
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var genderLabel: UILabel!
     @IBOutlet private weak var dateOfBirthLabel: UILabel!
     @IBOutlet private weak var emailLabel: UILabel!
     @IBOutlet private weak var residentialAddressLabel: UILabel!
     @IBOutlet private weak var placeOfBirth: UILabel!
+    @IBOutlet private weak var prefferedColor: UILabel!
     
-    @IBOutlet weak var prefferedColor: UILabel!
     @IBOutlet private weak var additionalInfoStack: UIStackView!
     @IBOutlet private weak var submitButton: UIButton!
     
@@ -34,6 +35,7 @@ class ReviewScreenViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        updateViewWithData()
         print(dataTransporter.description)
         setupView()
     }
@@ -42,6 +44,17 @@ class ReviewScreenViewController: UIViewController {
         personalDetailsStack.applyProfileStyle()
         additionalInfoStack.applyProfileStyle()
         submitButton.applyProfileStyle()
+    }
+    
+    private func updateViewWithData() {
+        profileImage.load(urlString: viewModel.imageURL)
+        nameLabel.text = viewModel.fullName
+        genderLabel.text = viewModel.gender
+        dateOfBirthLabel.text = viewModel.dateOfBirth
+        emailLabel.text = viewModel.email
+        residentialAddressLabel.text = viewModel.residentialAddress
+        placeOfBirth.text =  viewModel.placeOfBirth
+        prefferedColor.text =  viewModel.prefferedColor
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
