@@ -78,15 +78,15 @@ class EmployeeInfomationViewController: UIViewController {
         var errorMessage = ""
         
         if viewModel.selectedEmployee == nil {
-            errorMessage += "Please select an employeer.\n"
+            errorMessage += "Please select an employeer.\n\n"
         }
         
         if let dateOfBirth = dateOfBirthTextField.text, !isValidDateOfBirth(dateOfBirth) {
-            errorMessage += "Please enter a valid date of birth in the format YYYY-MM-DD.\n"
+            errorMessage += "Please enter a valid date of birth in the format YYYY-MM-DD.\n\n"
         }
         
         if placeOfBirthTextField.text?.isEmpty ?? true {
-            errorMessage += "Please enter the place of birth.\n"
+            errorMessage += "Please enter the place of birth.\n\n"
         }
         
         if !errorMessage.isEmpty {
