@@ -17,7 +17,7 @@ class EmployeeInfomationViewController: UIViewController {
     @IBOutlet private weak var dateOfBirthTextField: UITextField!
     @IBOutlet private weak var placeOfBirthTextField: UITextField!
     
-    var dataTransporter =  EmployeeInformationDataTransporter()
+    var dataTransporter = EmployeeInformationDataTransporter()
     private lazy var viewModel = EmployeeInfomationViewModel(dataTransporter: dataTransporter)
     
     override func viewDidLoad() {
@@ -41,20 +41,18 @@ class EmployeeInfomationViewController: UIViewController {
     }
     
     @objc func nextButtonTapped() {
-        guard validateInputs() else {
-            return
+        if validateInputs() {
+            updateDataTransporter()
+            performSegue(withIdentifier: "additionalInformationSegue", sender: nil)
         }
-        
-        updateDataTransporter()
-        performSegue(withIdentifier: "additionalInformationSegue", sender: nil)
     }
     
     @objc func profileStackviewClicked() {
         print("works")
-        let storyBoard : UIStoryboard = UIStoryboard(name: "EmployessListScreen", bundle:nil)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "EmployessListScreen", bundle: nil)
         let employeeViewController = storyBoard.instantiateViewController(withIdentifier: "ListViewController") as! EmployessListViewController
         employeeViewController.delegate = self
-        self.present(employeeViewController, animated:true, completion:nil)
+        self.present(employeeViewController, animated: true, completion: nil)
     }
     
     private func setupView() {
@@ -63,31 +61,6 @@ class EmployeeInfomationViewController: UIViewController {
         placeOfBirthTextField.applyProfileStyle()
         
         profileStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(profileStackviewClicked)))
-    }
-    
-    private func validateInputs() -> Bool {
-        var validationMessages: [String] = []
-        
-        if viewModel.selectedEmployee == nil {
-            validationMessages.append("Please select a employee.")
-        }
-        
-        if dateOfBirthTextField.text?.isEmpty ?? true {
-            validationMessages.append("Please enter a valid date of birth.")
-        }
-        
-        if placeOfBirthTextField.text?.isEmpty ?? true {
-            validationMessages.append("Please enter a valid place of birth.")
-        }
-        
-        if validationMessages.isEmpty {
-            return true
-        } else {
-            let alert = UIAlertController(title: "Validation Error", message: validationMessages.joined(separator: "\n"), preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
-            return false
-        }
     }
     
     private func updateDataTransporter() {
@@ -99,6 +72,42 @@ class EmployeeInfomationViewController: UIViewController {
         viewModel.dataTransporter.dateOfBirth = dateOfBirthTextField.text
         viewModel.dataTransporter.placeOfBirth = placeOfBirthTextField.text
         viewModel.dataTransporter.selectedEmployee = viewModel.selectedEmployee
+    }
+    
+    private func validateInputs() -> Bool {
+        var errorMessage = ""
+        
+        if viewModel.selectedEmployee == nil {
+            errorMessage += "Please select an employeer.\n"
+        }
+        
+        if let dateOfBirth = dateOfBirthTextField.text, !isValidDateOfBirth(dateOfBirth) {
+            errorMessage += "Please enter a valid date of birth in the format YYYY-MM-DD.\n"
+        }
+        
+        if placeOfBirthTextField.text?.isEmpty ?? true {
+            errorMessage += "Please enter the place of birth.\n"
+        }
+        
+        if !errorMessage.isEmpty {
+            showAlert(message: errorMessage)
+            return false
+        }
+        
+        return true
+    }
+    
+    private func isValidDateOfBirth(_ dateOfBirth: String) -> Bool {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.date(from: dateOfBirth) != nil
+    }
+    
+    private func showAlert(message: String) {
+        let alertController = UIAlertController(title: "Validation Error", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
 }
 

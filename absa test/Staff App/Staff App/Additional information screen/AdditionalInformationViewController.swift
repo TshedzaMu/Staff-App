@@ -88,11 +88,11 @@ class AdditionalInformationViewController: UIViewController {
         var validationMessages: [String] = []
         
         if viewModel.selectedColor == nil {
-            validationMessages.append("Please select a color.")
+            validationMessages.append("Please select a color.\n")
         }
         
         if residentialAddressTexField.text?.isEmpty ?? true {
-            validationMessages.append("Please enter a valid residential address.")
+            validationMessages.append("Please enter a valid residential address.\n")
         }
         
         if validationMessages.isEmpty {
