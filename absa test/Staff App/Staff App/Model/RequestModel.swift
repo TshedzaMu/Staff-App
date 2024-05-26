@@ -7,18 +7,18 @@
 
 import Foundation
 
-struct LoginRequest: Encodable {
+struct LoginRequest: Codable {
     let email: String
     let password: String
 }
 
-struct EmployeeDetailsUpdateRequest: Encodable {
+struct EmployeeDetailsUpdateRequest: Codable {
     let userLoginToken: String
     let personalDetails: PersonalDetails
-    let additionalInformation: AddidtionalInformation
+    let additionalInformation: AdditionalInformation
 }
 
-struct PersonalDetails: Encodable {
+struct PersonalDetails: Codable {
     let id: Int
     let email: String
     let first_name: String
@@ -29,7 +29,7 @@ struct PersonalDetails: Encodable {
 }
 
 
-struct AddidtionalInformation: Encodable {
+struct AdditionalInformation: Codable {
     let placeOfBirth: String
     let preferredColor: String
     let residentialAddress: String

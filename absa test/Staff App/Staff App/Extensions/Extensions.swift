@@ -68,3 +68,20 @@ extension UIColor {
     }
 }
 
+extension UIViewController {
+    func presentRootViewController(animated: Bool = true, completion: (() -> Void)? = nil) {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let rootViewController = windowScene.windows.first?.rootViewController else {
+            print("No root view controller found")
+            return
+        }
+        
+        if let presentedViewController = rootViewController.presentedViewController {
+            presentedViewController.dismiss(animated: animated) {
+                rootViewController.present(self, animated: animated, completion: completion)
+            }
+        } else {
+            rootViewController.present(self, animated: animated, completion: completion)
+        }
+    }
+}

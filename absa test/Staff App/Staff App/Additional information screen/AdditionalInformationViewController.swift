@@ -30,8 +30,6 @@ class AdditionalInformationViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateGenderSegmentControl()
-        print(viewModel.dataTransporter.gender)
-        print(dataTransporter.description)
         setupView()
     }
     

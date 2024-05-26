@@ -9,7 +9,11 @@ import Foundation
 
 class ReviewScreenViewModel {
     
+    private lazy var service = Service()
     var dataTransporter: EmployeeInformationDataTransporter
+    var updateTimeStamp: String?
+    
+    var onUpdateComplete: (() -> Void)?
     
     init(dataTransporter: EmployeeInformationDataTransporter) {
         self.dataTransporter = dataTransporter
@@ -55,4 +59,39 @@ class ReviewScreenViewModel {
     var prefferedColor: String {
         return dataTransporter.preferredColor ?? ""
     }
+    
+    var token: String {
+        guard let token = TokenManager.shared.getToken() else { return "" }
+        return token
+    }
+    
+    var requestModel: EmployeeDetailsUpdateRequest {
+        return EmployeeDetailsUpdateRequest(userLoginToken: token,
+                                            personalDetails: PersonalDetails(id: dataTransporter.id ?? 0,
+                                                                             email: email,
+                                                                             first_name: employeeFirstName,
+                                                                             last_name: employeeLastName,
+                                                                             avatar: imageURL,
+                                                                             DOB: dateOfBirth,
+                                                                             gender: gender),
+                                            additionalInformation: AdditionalInformation(placeOfBirth: placeOfBirth,
+                                                                                          preferredColor: prefferedColor,
+                                                                                          residentialAddress: residentialAddress))
+    }
+    
+    
+    func updateDetails() {
+        service.updateDetails(body: requestModel) { [weak self] response, error in
+             DispatchQueue.main.async {
+                 if let error = error {
+                     print("Failed to update details: \(error)")
+                 } else if let response = response {
+                     self?.updateTimeStamp = response.createdAt
+                     self?.onUpdateComplete?()
+                 }
+             }
+         }
+     }
+    
+    
 }

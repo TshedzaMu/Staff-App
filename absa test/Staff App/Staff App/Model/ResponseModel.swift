@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct LoginResponse: Decodable {
+struct LoginResponse: Codable {
     let token: String?
 }
 
-struct EmployeesResponse: Decodable {
+struct EmployeesResponse: Codable {
     let page: Int?
     let per_page: Int?
     let total: Int?
@@ -20,7 +20,7 @@ struct EmployeesResponse: Decodable {
     let support: Support?
 }
 
-struct Employee: Decodable {
+struct Employee: Codable {
     let id: Int?
     let email: String?
     let first_name: String?
@@ -28,12 +28,12 @@ struct Employee: Decodable {
     let avatar: String?
 }
 
-struct Support: Decodable {
+struct Support: Codable {
     let url: String?
     let text: String?
 }
 
-struct ColorsResponse: Decodable {
+struct ColorsResponse: Codable {
     let page: Int?
     let per_page: Int?
     let total: Int?
@@ -42,11 +42,20 @@ struct ColorsResponse: Decodable {
     let support: Support?
 }
 
-struct Color: Decodable {
+struct Color: Codable {
     let id: Int?
     let name: String?
     let year: Int?
     let color: String?
     let pantone_value: String?
 }
+
+struct updateEmployeeResponse: Codable {
+    let userLoginToken: String?
+    let personalDetails: PersonalDetails?
+    let additionalInformation: AdditionalInformation?
+    let id: String?
+    let createdAt: String?
+}
+
 

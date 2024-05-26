@@ -59,12 +59,19 @@ class ReviewScreenViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "confirmationSegue" {
-            if segue.destination is ReviewScreenViewController {
+            if let confirmationVC = segue.destination as? ConfirmationViewController {
+                confirmationVC.dataTransporter = self.dataTransporter
             }
         }
     }
     
     @IBAction func submitButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "confirmationSegue", sender: nil)
+        viewModel.updateDetails()
+        viewModel.onUpdateComplete = { [weak self] in
+            if self?.viewModel.updateTimeStamp != nil {
+                self?.dataTransporter.updateTimeStamp = self?.viewModel.updateTimeStamp
+                self?.performSegue(withIdentifier: "confirmationSegue", sender: nil)
+            }
+        }
     }
 }

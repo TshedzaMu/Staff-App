@@ -93,7 +93,7 @@ class Service {
         makePostRequest(url: url, body: body, completion: completed)
     }
     
-    func updateDetails(body: EmployeeDetailsUpdateRequest, completed: @escaping SuccessHandler<LoginResponse>) {
+    func updateDetails(body: EmployeeDetailsUpdateRequest, completed: @escaping SuccessHandler<updateEmployeeResponse>) {
         let urlString = "https://reqres.in/api/users"
         guard let url = URL(string: urlString) else {
             completed(nil, "Invalid URL")

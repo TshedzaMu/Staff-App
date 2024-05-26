@@ -15,4 +15,25 @@ class ConfirmationViewModel {
         self.dataTransporter = dataTransporter
     }
     
+    var employeeFirstName: String? {
+        return dataTransporter.selectedEmployee?.first_name
+    }
+    
+    var employeeLastName: String? {
+        return dataTransporter.selectedEmployee?.last_name
+    }
+    
+    var fullName: String {
+        return "\(employeeFirstName ?? "") \(employeeLastName ?? "")"
+    }
+    
+    var createdDate: String {
+        return dataTransporter.updateTimeStamp ?? ""
+    }
+    
+    
+    var message: String {
+    return "Congratulations you have successfully updated personal details and additional details for \(fullName) on \(createdDate)"
+    }
+    
 }

@@ -36,7 +36,6 @@ class EmployeeInfomationViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.hidesBackButton = true
-        print(TokenManager.shared.getToken())
         setupView()
     }
     
@@ -77,6 +76,7 @@ class EmployeeInfomationViewController: UIViewController {
         viewModel.dataTransporter.avatar = viewModel.selectedEmployee?.avatar
         viewModel.dataTransporter.dateOfBirth = dateOfBirthTextField.text
         viewModel.dataTransporter.placeOfBirth = placeOfBirthTextField.text
+        viewModel.dataTransporter.selectedEmployee = viewModel.selectedEmployee
     }
 }
 
