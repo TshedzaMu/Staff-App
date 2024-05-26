@@ -23,6 +23,9 @@ class ReviewScreenViewModel {
         return dataTransporter.avatar ?? ""
     }
     
+    var Id: Int {
+        return dataTransporter.id ?? Int()
+    }
 
     var employeeFirstName: String {
         return dataTransporter.firstName ?? ""
@@ -67,7 +70,7 @@ class ReviewScreenViewModel {
     
     var requestModel: EmployeeDetailsUpdateRequest {
         return EmployeeDetailsUpdateRequest(userLoginToken: token,
-                                            personalDetails: PersonalDetails(id: dataTransporter.id ?? 0,
+                                            personalDetails: PersonalDetails(id: Id,
                                                                              email: email,
                                                                              first_name: employeeFirstName,
                                                                              last_name: employeeLastName,

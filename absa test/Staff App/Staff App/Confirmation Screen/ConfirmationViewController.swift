@@ -39,14 +39,7 @@ class ConfirmationViewController: UIViewController {
         navigateToLogin()
         
     }
-    
-//    private func navigateToLogin() {
-//        let loginViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
-//        loginViewController.modalPresentationStyle = .fullScreen
-//        loginViewController.modalTransitionStyle = .crossDissolve
-//        loginViewController.presentRootViewController()
-//    }
-    
+
     private func navigateToLogin() {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
         let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
@@ -54,6 +47,4 @@ class ConfirmationViewController: UIViewController {
         loginViewController.modalTransitionStyle = .crossDissolve
         loginViewController.presentRootViewController()
     }
-
-
 }

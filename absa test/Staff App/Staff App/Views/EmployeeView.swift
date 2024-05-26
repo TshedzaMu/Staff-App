@@ -10,7 +10,7 @@ import UIKit
 
 class EmployeeView: UIView, NibLoadable {
     
-   @IBOutlet private weak var flagImageView: UIImageView!
+   @IBOutlet private weak var profileImageView: UIImageView!
    @IBOutlet private weak var nameLabel: UILabel!
    @IBOutlet private weak var emailLabel: UILabel!
     
@@ -24,7 +24,7 @@ class EmployeeView: UIView, NibLoadable {
     
     func setupView(name: String, email: String, urlString: String) {
         styling()
-        flagImageView.load(urlString: urlString)
+        profileImageView.load(urlString: urlString)
         nameLabel.text = name
         emailLabel.text = email
     }

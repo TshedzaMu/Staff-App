@@ -1,58 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mPc-cw-Slt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IjK-up-R21">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--List of Employees-->
-        <scene sceneID="tFt-6E-1ap">
+        <scene sceneID="dQ1-mn-aVh">
             <objects>
-                <tableViewController storyboardIdentifier="ListViewController" title="List of Employees" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mPc-cw-Slt" customClass="EmployessListViewController" customModule="Staff_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="eIV-6r-jja">
+                <viewController storyboardIdentifier="ListViewController" title="List of Employees" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IjK-up-R21" customClass="EmployessListViewController" customModule="Staff_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zK3-Mm-REd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PROFILE_CELL" rowHeight="100" id="dfc-q5-TYL" customClass="ProfileViewTableViewCell" customModule="Staff_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="393" height="100"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dfc-q5-TYL" id="X3w-S0-EF0">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FIx-d9-9Z4" customClass="EmployeeView" customModule="Staff_App" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="FIx-d9-9Z4" firstAttribute="leading" secondItem="X3w-S0-EF0" secondAttribute="leading" id="366-c0-cRo"/>
-                                        <constraint firstAttribute="trailing" secondItem="FIx-d9-9Z4" secondAttribute="trailing" id="nhA-50-oeV"/>
-                                        <constraint firstAttribute="bottom" secondItem="FIx-d9-9Z4" secondAttribute="bottom" id="oft-mi-bob"/>
-                                        <constraint firstItem="FIx-d9-9Z4" firstAttribute="top" secondItem="X3w-S0-EF0" secondAttribute="top" id="zAo-KH-0bs"/>
-                                    </constraints>
-                                </tableViewCellContentView>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Xg6-rE-hIP">
+                                <rect key="frame" x="0.0" y="129" width="393" height="723"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PROFILE_CELL" id="BGB-gw-079" customClass="ProfileViewTableViewCell" customModule="Staff_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="90.333335876464844"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BGB-gw-079" id="IPG-Mj-Com">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="90.333335876464844"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UEz-7n-9TQ" customClass="EmployeeView" customModule="Staff_App" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="90.333333333333329"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="90" id="tiN-83-n1U"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="UEz-7n-9TQ" secondAttribute="trailing" id="0rG-6X-xJm"/>
+                                                <constraint firstAttribute="bottom" secondItem="UEz-7n-9TQ" secondAttribute="bottom" id="b06-sk-H6w"/>
+                                                <constraint firstItem="UEz-7n-9TQ" firstAttribute="top" secondItem="IPG-Mj-Com" secondAttribute="top" id="rQu-Ls-zQX"/>
+                                                <constraint firstItem="UEz-7n-9TQ" firstAttribute="leading" secondItem="IPG-Mj-Com" secondAttribute="leading" id="t9O-MN-3kD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="employeeView" destination="UEz-7n-9TQ" id="6eb-XD-xf6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <outlet property="employeeView" destination="FIx-d9-9Z4" id="hYv-Gi-fPp"/>
+                                    <outlet property="dataSource" destination="IjK-up-R21" id="nRC-1I-9cg"/>
+                                    <outlet property="delegate" destination="IjK-up-R21" id="yS6-4h-sbJ"/>
                                 </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="mPc-cw-Slt" id="fCm-AV-SNP"/>
-                            <outlet property="delegate" destination="mPc-cw-Slt" id="rfW-TH-vd4"/>
-                        </connections>
-                    </tableView>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="tR3-fK-kfZ">
+                                <rect key="frame" x="0.0" y="73" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="IjK-up-R21" id="YJ6-VE-szI"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Gqd-4F-eAl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tR3-fK-kfZ" firstAttribute="top" secondItem="zK3-Mm-REd" secondAttribute="top" constant="73" id="1Eb-eM-dwo"/>
+                            <constraint firstItem="tR3-fK-kfZ" firstAttribute="leading" secondItem="zK3-Mm-REd" secondAttribute="leading" id="Bu1-SX-b38"/>
+                            <constraint firstAttribute="trailing" secondItem="tR3-fK-kfZ" secondAttribute="trailing" id="Fi5-oC-jSy"/>
+                            <constraint firstAttribute="trailing" secondItem="Xg6-rE-hIP" secondAttribute="trailing" id="Vru-wR-0HP"/>
+                            <constraint firstItem="Xg6-rE-hIP" firstAttribute="leading" secondItem="zK3-Mm-REd" secondAttribute="leading" id="kpa-Yb-fKq"/>
+                            <constraint firstItem="Xg6-rE-hIP" firstAttribute="top" secondItem="tR3-fK-kfZ" secondAttribute="bottom" id="uKR-Xr-XuS"/>
+                            <constraint firstAttribute="bottom" secondItem="Xg6-rE-hIP" secondAttribute="bottom" id="ztG-8s-Rl6"/>
+                        </constraints>
+                    </view>
                     <connections>
-                        <outlet property="employeesListTableView" destination="eIV-6r-jja" id="CMY-bd-VGg"/>
+                        <outlet property="employeeSearchBar" destination="tR3-fK-kfZ" id="MIc-JZ-bi2"/>
+                        <outlet property="employeesListTableView" destination="Xg6-rE-hIP" id="YBl-xT-tKG"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OgG-Qk-zAo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Xi-tN-XaX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3.8167938931297707" y="10.563380281690142"/>
+            <point key="canvasLocation" x="-66" y="-134"/>
         </scene>
     </scenes>
     <resources>

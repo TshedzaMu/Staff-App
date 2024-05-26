@@ -14,6 +14,7 @@ class EmployessListViewController: UIViewController {
     weak var delegate: EmployeeSelectionDelegate?
     
     @IBOutlet private var employeesListTableView: UITableView!
+    @IBOutlet private weak var employeeSearchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,8 @@ class EmployessListViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupTableHeaderView()
+       // setupTableHeaderView()
+        self.title = "List Of Employees"
     }
     
     func setupTableHeaderView() {
