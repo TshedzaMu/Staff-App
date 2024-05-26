@@ -52,6 +52,12 @@
                                     <outlet property="delegate" destination="IjK-up-R21" id="yS6-4h-sbJ"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List Of Employees" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIt-u6-VXe">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="73"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <searchBar contentMode="redraw" placeholder="Search employee name" translatesAutoresizingMaskIntoConstraints="NO" id="tR3-fK-kfZ">
                                 <rect key="frame" x="0.0" y="73" width="393" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -66,8 +72,12 @@
                             <constraint firstItem="tR3-fK-kfZ" firstAttribute="top" secondItem="zK3-Mm-REd" secondAttribute="top" constant="73" id="1Eb-eM-dwo"/>
                             <constraint firstItem="tR3-fK-kfZ" firstAttribute="leading" secondItem="zK3-Mm-REd" secondAttribute="leading" id="Bu1-SX-b38"/>
                             <constraint firstAttribute="trailing" secondItem="tR3-fK-kfZ" secondAttribute="trailing" id="Fi5-oC-jSy"/>
+                            <constraint firstItem="tR3-fK-kfZ" firstAttribute="top" secondItem="cIt-u6-VXe" secondAttribute="bottom" id="Jxc-ZP-Hmf"/>
                             <constraint firstAttribute="trailing" secondItem="Xg6-rE-hIP" secondAttribute="trailing" id="Vru-wR-0HP"/>
+                            <constraint firstItem="cIt-u6-VXe" firstAttribute="leading" secondItem="zK3-Mm-REd" secondAttribute="leading" id="dr0-Bj-0gZ"/>
                             <constraint firstItem="Xg6-rE-hIP" firstAttribute="leading" secondItem="zK3-Mm-REd" secondAttribute="leading" id="kpa-Yb-fKq"/>
+                            <constraint firstAttribute="trailing" secondItem="cIt-u6-VXe" secondAttribute="trailing" id="nmJ-dW-ZRx"/>
+                            <constraint firstItem="cIt-u6-VXe" firstAttribute="top" secondItem="zK3-Mm-REd" secondAttribute="top" id="s4N-dJ-UyN"/>
                             <constraint firstItem="Xg6-rE-hIP" firstAttribute="top" secondItem="tR3-fK-kfZ" secondAttribute="bottom" id="uKR-Xr-XuS"/>
                             <constraint firstAttribute="bottom" secondItem="Xg6-rE-hIP" secondAttribute="bottom" id="ztG-8s-Rl6"/>
                         </constraints>
