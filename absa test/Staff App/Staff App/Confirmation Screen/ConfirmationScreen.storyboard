@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6IL-1b-3pd">
-                                <rect key="frame" x="0.0" y="139.99999999999997" width="393" height="381.33333333333326"/>
+                                <rect key="frame" x="0.0" y="140" width="393" height="300"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Hc3-Pl-p8K">
-                                        <rect key="frame" x="81.666666666666686" y="1" width="230" height="228.66666666666666"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="success" translatesAutoresizingMaskIntoConstraints="NO" id="Hc3-Pl-p8K">
+                                        <rect key="frame" x="81.666666666666686" y="0.0" width="230" height="230"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="230" id="QE6-6Z-yw4"/>
                                             <constraint firstAttribute="width" constant="230" id="q4p-Qg-HGI"/>
@@ -32,9 +32,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VF5-BT-F3y">
-                                        <rect key="frame" x="10" y="300" width="373" height="81.333333333333314"/>
-                                        <string key="text">titleLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)titleLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)</string>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VF5-BT-F3y">
+                                        <rect key="frame" x="10" y="300" width="373" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -42,7 +41,10 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOU-LP-ZrB">
-                                <rect key="frame" x="10" y="703" width="373" height="34.333333333333371"/>
+                                <rect key="frame" x="10" y="672.33333333333337" width="373" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="V69-XS-TxL"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Done"/>
                                 <connections>
@@ -67,6 +69,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="doneButton" destination="DOU-LP-ZrB" id="M67-5F-m4Q"/>
                         <outlet property="resultsLabel" destination="Zoa-VU-WKe" id="IAY-iJ-Laq"/>
                         <outlet property="resultsMessageLabel" destination="VF5-BT-F3y" id="SU0-qm-8Hy"/>
                     </connections>
@@ -87,7 +90,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pencil.circle" catalog="system" width="128" height="123"/>
+        <image name="success" width="110.66666412353516" height="99.333335876464844"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

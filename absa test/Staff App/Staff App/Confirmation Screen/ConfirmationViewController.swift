@@ -13,6 +13,9 @@ class ConfirmationViewController: UIViewController {
     @IBOutlet private weak var resultsLabel: UILabel!
     @IBOutlet private weak var resultsMessageLabel: UILabel!
     
+    
+    @IBOutlet private weak var doneButton: UIButton!
+    
     var dataTransporter: EmployeeInformationDataTransporter!
     
     private lazy var viewModel = ConfirmationViewModel(dataTransporter: dataTransporter)
@@ -23,7 +26,9 @@ class ConfirmationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        viewModel.updateDateFormat()
         resultsMessageLabel.text = viewModel.message
+        doneButton.applyProfileStyle()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

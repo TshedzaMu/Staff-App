@@ -70,6 +70,8 @@ class ReviewScreenViewController: UIViewController {
         viewModel.onUpdateComplete = { [weak self] in
             if self?.viewModel.updateTimeStamp != nil {
                 self?.dataTransporter.updateTimeStamp = self?.viewModel.updateTimeStamp
+                print(self?.viewModel.updateTimeStamp)
+
                 self?.performSegue(withIdentifier: "confirmationSegue", sender: nil)
             }
         }
