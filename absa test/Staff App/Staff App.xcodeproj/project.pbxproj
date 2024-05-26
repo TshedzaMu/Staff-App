@@ -44,6 +44,8 @@
 		31A3BEF22C01180200A7C0D4 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEF12C01180200A7C0D4 /* ResponseModel.swift */; };
 		31A3BEF42C02776000A7C0D4 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEF32C02776000A7C0D4 /* TokenManager.swift */; };
 		31A3BEF62C0286EF00A7C0D4 /* EmployeeInformationDataTransporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEF52C0286EF00A7C0D4 /* EmployeeInformationDataTransporter.swift */; };
+		31A3BEFA2C038A9900A7C0D4 /* TextInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A3BEF92C038A9900A7C0D4 /* TextInputView.xib */; };
+		31A3BEFC2C038C7B00A7C0D4 /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEFB2C038C7B00A7C0D4 /* TextInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,8 @@
 		31A3BEF12C01180200A7C0D4 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		31A3BEF32C02776000A7C0D4 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		31A3BEF52C0286EF00A7C0D4 /* EmployeeInformationDataTransporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeInformationDataTransporter.swift; sourceTree = "<group>"; };
+		31A3BEF92C038A9900A7C0D4 /* TextInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputView.xib; sourceTree = "<group>"; };
+		31A3BEFB2C038C7B00A7C0D4 /* TextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,9 +237,9 @@
 		31A3BEC42BFF724800A7C0D4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				31A3BEF82C038A2A00A7C0D4 /* Input Text View */,
+				31A3BEF72C0389E400A7C0D4 /* Employee View */,
 				31A3BED52C00B7CD00A7C0D4 /* Colour cell */,
-				31A3BEC52BFF726F00A7C0D4 /* EmployeeView.xib */,
-				31A3BEC72BFF72AB00A7C0D4 /* EmployeeView.swift */,
 				31A3BECC2BFF843300A7C0D4 /* ProfileViewTableViewCell.swift */,
 			);
 			path = Views;
@@ -313,6 +317,24 @@
 				31A3BEF52C0286EF00A7C0D4 /* EmployeeInformationDataTransporter.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		31A3BEF72C0389E400A7C0D4 /* Employee View */ = {
+			isa = PBXGroup;
+			children = (
+				31A3BEC52BFF726F00A7C0D4 /* EmployeeView.xib */,
+				31A3BEC72BFF72AB00A7C0D4 /* EmployeeView.swift */,
+			);
+			path = "Employee View";
+			sourceTree = "<group>";
+		};
+		31A3BEF82C038A2A00A7C0D4 /* Input Text View */ = {
+			isa = PBXGroup;
+			children = (
+				31A3BEF92C038A9900A7C0D4 /* TextInputView.xib */,
+				31A3BEFB2C038C7B00A7C0D4 /* TextInputView.swift */,
+			);
+			path = "Input Text View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,6 +443,7 @@
 			files = (
 				31A3BEDD2C00BF4A00A7C0D4 /* ReviewScreen.storyboard in Resources */,
 				31A3BEC62BFF726F00A7C0D4 /* EmployeeView.xib in Resources */,
+				31A3BEFA2C038A9900A7C0D4 /* TextInputView.xib in Resources */,
 				31A3BE8F2BFF378E00A7C0D4 /* LaunchScreen.storyboard in Resources */,
 				31A3BEBF2BFF71A300A7C0D4 /* EmployessListScreen.storyboard in Resources */,
 				31A3BED02C00B29500A7C0D4 /* AdditionalInformationScreen.storyboard in Resources */,
@@ -474,6 +497,7 @@
 				31A3BEE62C00C2A100A7C0D4 /* ConfirmationViewController.swift in Sources */,
 				31A3BEC12BFF71B600A7C0D4 /* EmployessListViewController.swift in Sources */,
 				31A3BE832BFF378D00A7C0D4 /* AppDelegate.swift in Sources */,
+				31A3BEFC2C038C7B00A7C0D4 /* TextInputView.swift in Sources */,
 				31A3BED22C00B2C100A7C0D4 /* AdditionalInformationViewController.swift in Sources */,
 				31A3BEDA2C00B83300A7C0D4 /* ColorViewController.swift in Sources */,
 				31A3BE852BFF378D00A7C0D4 /* SceneDelegate.swift in Sources */,
