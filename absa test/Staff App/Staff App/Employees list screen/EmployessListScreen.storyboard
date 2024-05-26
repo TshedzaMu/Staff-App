@@ -52,7 +52,7 @@
                                     <outlet property="delegate" destination="IjK-up-R21" id="yS6-4h-sbJ"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="tR3-fK-kfZ">
+                            <searchBar contentMode="redraw" placeholder="Search employee name" translatesAutoresizingMaskIntoConstraints="NO" id="tR3-fK-kfZ">
                                 <rect key="frame" x="0.0" y="73" width="393" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>

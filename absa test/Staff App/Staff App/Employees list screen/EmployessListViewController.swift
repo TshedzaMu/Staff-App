@@ -55,8 +55,7 @@ class EmployessListViewController: UIViewController {
 extension EmployessListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let numberOfEmployees = viewModel.numberOfEmployees else { return 0 }
-        return numberOfEmployees
+        return viewModel.employeeListNumber
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,3 +78,16 @@ extension EmployessListViewController: UITableViewDataSource, UITableViewDelegat
     }
 }
 
+extension EmployessListViewController: UISearchBarDelegate {
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.filterTableView(text: "")
+        searchBar.resignFirstResponder()
+        employeesListTableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.filterTableView(text: searchText)
+        employeesListTableView.reloadData()
+    }
+}
