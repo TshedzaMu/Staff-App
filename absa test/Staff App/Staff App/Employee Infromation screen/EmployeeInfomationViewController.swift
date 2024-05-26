@@ -11,26 +11,19 @@ import UIKit
 class EmployeeInfomationViewController: UIViewController {
     
     @IBOutlet weak var profileImageView: UIImageView!
-    
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var emailLabel: UILabel!
-    
     @IBOutlet private weak var profileStackView: UIStackView!
-    
     @IBOutlet private weak var dateOfBirthTextField: UITextField!
     @IBOutlet private weak var placeOfBirthTextField: UITextField!
     
     var dataTransporter =  EmployeeInformationDataTransporter()
-    
-
     private lazy var viewModel = EmployeeInfomationViewModel(dataTransporter: dataTransporter)
     
-   
     override func viewDidLoad() {
         super.viewDidLoad()
         let nextButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextButtonTapped))
         navigationItem.rightBarButtonItem = nextButton
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,12 +41,16 @@ class EmployeeInfomationViewController: UIViewController {
     }
     
     @objc func nextButtonTapped() {
+        guard validateInputs() else {
+            return
+        }
+        
         updateDataTransporter()
         performSegue(withIdentifier: "additionalInformationSegue", sender: nil)
     }
     
     @objc func profileStackviewClicked() {
-         print("works")
+        print("works")
         let storyBoard : UIStoryboard = UIStoryboard(name: "EmployessListScreen", bundle:nil)
         let employeeViewController = storyBoard.instantiateViewController(withIdentifier: "ListViewController") as! EmployessListViewController
         employeeViewController.delegate = self
@@ -66,6 +63,31 @@ class EmployeeInfomationViewController: UIViewController {
         placeOfBirthTextField.applyProfileStyle()
         
         profileStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(profileStackviewClicked)))
+    }
+    
+    private func validateInputs() -> Bool {
+        var validationMessages: [String] = []
+        
+        if viewModel.selectedEmployee == nil {
+            validationMessages.append("Please select a employee.")
+        }
+        
+        if dateOfBirthTextField.text?.isEmpty ?? true {
+            validationMessages.append("Please enter a valid date of birth.")
+        }
+        
+        if placeOfBirthTextField.text?.isEmpty ?? true {
+            validationMessages.append("Please enter a valid place of birth.")
+        }
+        
+        if validationMessages.isEmpty {
+            return true
+        } else {
+            let alert = UIAlertController(title: "Validation Error", message: validationMessages.joined(separator: "\n"), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            return false
+        }
     }
     
     private func updateDataTransporter() {
@@ -86,7 +108,7 @@ extension EmployeeInfomationViewController: EmployeeSelectionDelegate {
         updateViewWithDetails()
     }
     
-     private func updateViewWithDetails() {
+    private func updateViewWithDetails() {
         profileImageView.load(urlString: viewModel.imageURL)
         nameLabel.text = viewModel.fullName
         emailLabel.text = viewModel.email
