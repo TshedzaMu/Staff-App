@@ -17,7 +17,6 @@ class AdditionalInformationViewController: UIViewController {
     @IBOutlet weak var genderSegmentControl: UISegmentedControl!
     
     private lazy var viewModel = AdditionalInformationViewModel(dataTransporter: dataTransporter)
-    
     var dataTransporter: EmployeeInformationDataTransporter!
     
     override func viewDidLoad() {
@@ -34,6 +33,10 @@ class AdditionalInformationViewController: UIViewController {
     }
     
     @objc func nextButtonTapped() {
+        guard validateInputs() else {
+            return
+        }
+        
         updateDataTransporter()
         performSegue(withIdentifier: "reviewSegue", sender: nil)
     }
@@ -81,12 +84,32 @@ class AdditionalInformationViewController: UIViewController {
         colorStack.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(colorStackviewClicked)))
     }
     
+    private func validateInputs() -> Bool {
+        var validationMessages: [String] = []
+        
+        if viewModel.selectedColor == nil {
+            validationMessages.append("Please select a color.")
+        }
+        
+        if residentialAddressTexField.text?.isEmpty ?? true {
+            validationMessages.append("Please enter a valid residential address.")
+        }
+        
+        if validationMessages.isEmpty {
+            return true
+        } else {
+            let alert = UIAlertController(title: "Validation Error", message: validationMessages.joined(separator: "\n"), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            return false
+        }
+    }
+    
     private func updateDataTransporter() {
         viewModel.dataTransporter.gender = "Male"
         viewModel.dataTransporter.residentialAddress = residentialAddressTexField.text
         viewModel.dataTransporter.preferredColor = viewModel.colorName
     }
-
     
     @objc func colorStackviewClicked() {
         let viewController = ColorViewController()

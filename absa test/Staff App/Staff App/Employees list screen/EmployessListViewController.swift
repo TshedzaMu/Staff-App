@@ -40,8 +40,11 @@ extension EmployessListViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PROFILE_CELL", for: indexPath) as! ProfileViewTableViewCell
         guard let view = EmployeeView.loadView() else { return UITableViewCell() }
-        if let employeeInfo = viewModel.employeeList?[indexPath.row] {
-            view.setupView(name: employeeInfo.first_name ?? "",
+        if let employeeInfo = viewModel.employeeList?[indexPath.row],
+           let firstName = employeeInfo.first_name,
+           let lastName = employeeInfo.last_name {
+            
+            view.setupView(name: "\(firstName) \(lastName)",
                            email: employeeInfo.email ?? "",
                            urlString: employeeInfo.avatar ?? "")
         }
