@@ -46,6 +46,7 @@
 		31A3BEF62C0286EF00A7C0D4 /* EmployeeInformationDataTransporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEF52C0286EF00A7C0D4 /* EmployeeInformationDataTransporter.swift */; };
 		31A3BEFA2C038A9900A7C0D4 /* TextInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A3BEF92C038A9900A7C0D4 /* TextInputView.xib */; };
 		31A3BEFC2C038C7B00A7C0D4 /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEFB2C038C7B00A7C0D4 /* TextInputView.swift */; };
+		31D11BE92C04BD6C00A7EE7F /* StaffInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D11BE82C04BD6C00A7EE7F /* StaffInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		31A3BEF52C0286EF00A7C0D4 /* EmployeeInformationDataTransporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeInformationDataTransporter.swift; sourceTree = "<group>"; };
 		31A3BEF92C038A9900A7C0D4 /* TextInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputView.xib; sourceTree = "<group>"; };
 		31A3BEFB2C038C7B00A7C0D4 /* TextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
+		31D11BE82C04BD6C00A7EE7F /* StaffInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				31A3BEEC2C00D07200A7C0D4 /* Service.swift */,
+				31D11BE82C04BD6C00A7EE7F /* StaffInteractor.swift */,
 				31A3BEF32C02776000A7C0D4 /* TokenManager.swift */,
 			);
 			path = Service;
@@ -501,6 +504,7 @@
 				31A3BED22C00B2C100A7C0D4 /* AdditionalInformationViewController.swift in Sources */,
 				31A3BEDA2C00B83300A7C0D4 /* ColorViewController.swift in Sources */,
 				31A3BE852BFF378D00A7C0D4 /* SceneDelegate.swift in Sources */,
+				31D11BE92C04BD6C00A7EE7F /* StaffInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

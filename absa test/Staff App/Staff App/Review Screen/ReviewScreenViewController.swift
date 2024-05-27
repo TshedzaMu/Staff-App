@@ -54,7 +54,7 @@ class ReviewScreenViewController: UIViewController {
         emailLabel.text = viewModel.email
         residentialAddressLabel.text = viewModel.residentialAddress
         placeOfBirth.text =  viewModel.placeOfBirth
-        prefferedColor.text =  viewModel.prefferedColor
+        prefferedColor.text =  viewModel.preferredColor
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

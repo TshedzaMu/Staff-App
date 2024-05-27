@@ -1,9 +1,3 @@
-//  EmployessListViewModel.swift
-//  Staff App
-//
-//  Created by Tshedza Musandiwa on 2024/05/23.
-//
-
 import Foundation
 
 protocol EmployeeSelectionDelegate: AnyObject {
@@ -13,9 +7,9 @@ protocol EmployeeSelectionDelegate: AnyObject {
 class EmployessListViewModel {
     
     var employeeList: [Employee]?
-    var unFiltredEmployeeList: [Employee] = []
+    var unFilteredEmployeeList: [Employee] = []
     
-    private lazy var service = Service()
+    private lazy var interactor: StaffInteractorProtocol = StaffInteractor(service: Service())
     
     var onEmployeesFetched: (() -> Void)?
     var onFetchFailed: ((String) -> Void)?
@@ -25,13 +19,14 @@ class EmployessListViewModel {
     }
     
     func getEmployeeList() {
-        service.getEmployees { [weak self] response, error in
-            if let employees = response?.data {
-                self?.employeeList = employees
-                self?.unFiltredEmployeeList = employees
+        interactor.getEmployees { [weak self] result in
+            switch result {
+            case .success(let response):
+                self?.employeeList = response.data
+                self?.unFilteredEmployeeList = response.data ?? []
                 self?.onEmployeesFetched?()
-            } else {
-                let errorMessage = error ?? "Unknown error"
+            case .failure(let error):
+                let errorMessage = error.localizedDescription
                 print("Failed to fetch employees, error: \(errorMessage)")
                 self?.onFetchFailed?(errorMessage)
             }
@@ -40,9 +35,9 @@ class EmployessListViewModel {
     
     func filterEmployeeList(with text: String) {
         if text.isEmpty {
-            employeeList = unFiltredEmployeeList
+            employeeList = unFilteredEmployeeList
         } else {
-            employeeList = employeeList?.filter { $0.first_name?.localizedCaseInsensitiveContains(text) ?? false }
+            employeeList = unFilteredEmployeeList.filter { $0.first_name?.localizedCaseInsensitiveContains(text) ?? false }
         }
     }
 }

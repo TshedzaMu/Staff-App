@@ -50,7 +50,7 @@ struct Color: Codable {
     let pantone_value: String?
 }
 
-struct updateEmployeeResponse: Codable {
+struct UpdateEmployeeResponse: Codable {
     let userLoginToken: String?
     let personalDetails: PersonalDetails?
     let additionalInformation: AdditionalInformation?

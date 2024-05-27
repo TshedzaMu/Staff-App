@@ -14,10 +14,12 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var loginButton: UIButton!
     
     private lazy var viewModel: LoginViewModel = {
-           let viewModel = LoginViewModel()
-           viewModel.delegate = self
-           return viewModel
-       }()
+        let service = Service()
+        let interactor = StaffInteractor(service: service)
+        let viewModel = LoginViewModel(interactor: interactor)
+        viewModel.delegate = self
+        return viewModel
+    }()
        
        override func viewDidLoad() {
            super.viewDidLoad()

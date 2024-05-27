@@ -1,15 +1,8 @@
-//
-//  ReviewScreenViewModel.swift
-//  Staff App
-//
-//  Created by Tshedza Musandiwa on 2024/05/24.
-//
-
 import Foundation
 
 class ReviewScreenViewModel {
     
-    private lazy var service = Service()
+    private lazy var interactor: StaffInteractorProtocol = StaffInteractor(service: Service())
     var dataTransporter: EmployeeInformationDataTransporter
     var updateTimeStamp: String?
     
@@ -24,7 +17,7 @@ class ReviewScreenViewModel {
     }
     
     var Id: Int {
-        return dataTransporter.id ?? Int()
+        return dataTransporter.id ?? 0
     }
 
     var employeeFirstName: String {
@@ -40,7 +33,7 @@ class ReviewScreenViewModel {
     }
     
     var fullName: String {
-        return "\(employeeFirstName ) \(employeeLastName)"
+        return "\(employeeFirstName) \(employeeLastName)"
     }
     
     var dateOfBirth: String {
@@ -59,7 +52,7 @@ class ReviewScreenViewModel {
         return dataTransporter.placeOfBirth ?? ""
     }
     
-    var prefferedColor: String {
+    var preferredColor: String {
         return dataTransporter.preferredColor ?? ""
     }
     
@@ -78,23 +71,20 @@ class ReviewScreenViewModel {
                                                                              DOB: dateOfBirth,
                                                                              gender: gender),
                                             additionalInformation: AdditionalInformation(placeOfBirth: placeOfBirth,
-                                                                                          preferredColor: prefferedColor,
+                                                                                          preferredColor: preferredColor,
                                                                                           residentialAddress: residentialAddress))
     }
     
     
     func updateDetails() {
-        service.updateDetails(body: requestModel) { [weak self] response, error in
-             DispatchQueue.main.async {
-                 if let error = error {
-                     print("Failed to update details: \(error)")
-                 } else if let response = response {
-                     self?.updateTimeStamp = response.createdAt
-                     self?.onUpdateComplete?()
-                 }
-             }
-         }
-     }
-    
-    
+        interactor.updateDetails(body: requestModel) { [weak self] result in
+            switch result {
+            case .success(let response):
+                self?.updateTimeStamp = response.createdAt
+                self?.onUpdateComplete?()
+            case .failure(let error):
+                print("Failed to update details: \(error.localizedDescription)")
+            }
+        }
+    }
 }

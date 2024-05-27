@@ -1,10 +1,3 @@
-//
-//  LoginViewModel.swift
-//  Staff App
-//
-//  Created by Tshedza Musandiwa on 2024/05/23.
-//
-
 import Foundation
 
 protocol LoginViewModelDelegate: AnyObject {
@@ -14,21 +7,27 @@ protocol LoginViewModelDelegate: AnyObject {
 
 class LoginViewModel {
     weak var delegate: LoginViewModelDelegate?
-    private lazy var service = Service()
+    
+    private let interactor: StaffInteractorProtocol
+    
+    init(interactor: StaffInteractorProtocol) {
+        self.interactor = interactor
+    }
     
     func login(email: String, password: String) {
         let loginRequest = LoginRequest(email: email, password: password)
-        service.login(body: loginRequest) { response, error in
-            if let response = response {
+        interactor.login(body: loginRequest) { result in
+            switch result {
+            case .success(let response):
                 print("Login successful, token: \(response.token ?? "")")
-                TokenManager.shared.saveToken(response.token ?? "")
-                if response.token == nil {
-                    self.delegate?.didFailToLogin(withError: "Invalid token")
-                } else {
+                if let token = response.token {
+                    TokenManager.shared.saveToken(token)
                     self.delegate?.didLoginSuccessfully()
+                } else {
+                    self.delegate?.didFailToLogin(withError: "Invalid token")
                 }
-            } else {
-                self.delegate?.didFailToLogin(withError: error ?? "Unknown error")
+            case .failure(let error):
+                self.delegate?.didFailToLogin(withError: error.localizedDescription)
             }
         }
     }

@@ -13,7 +13,7 @@ protocol ColorSelectionDelegate: AnyObject {
 class ColorViewModel {
     
     var colorList: [Color]?
-    private lazy var service = Service()
+    private lazy var interactor: StaffInteractorProtocol = StaffInteractor(service: Service())
     
     var onColorsFetched: (() -> Void)?
     var onFetchFailed: ((String) -> Void)?
@@ -23,15 +23,17 @@ class ColorViewModel {
     }
     
     func getColors() {
-        service.getColors { [weak self] response, error in
-            if let colors = response?.data {
-                self?.colorList = colors
+        interactor.getColors { [weak self] result in
+            switch result {
+            case .success(let response):
+                self?.colorList = response.data
                 self?.onColorsFetched?()
-            } else {
-                let errorMessage = error ?? "Unknown error"
+            case .failure(let error):
+                let errorMessage = error.localizedDescription
                 print("Failed to fetch colors, error: \(errorMessage)")
                 self?.onFetchFailed?(errorMessage)
             }
         }
     }
 }
+
