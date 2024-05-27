@@ -14,15 +14,26 @@ class EmployessListViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet private var employeesListTableView: UITableView!
     @IBOutlet private weak var employeeSearchBar: UISearchBar!
     
+    private let noResultsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "No employees found"
+        label.textAlignment = .center
+        label.isHidden = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchBar()
+        setupNoResultsLabel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.onEmployeesFetched = { [weak self] in
             self?.stopActivityIndicator()
+            self?.updateNoResultsLabelVisibility()
             self?.employeesListTableView.reloadData()
         }
         
@@ -37,6 +48,18 @@ class EmployessListViewController: UIViewController, UITableViewDelegate, UITabl
     
     private func setupSearchBar() {
         employeeSearchBar.delegate = self
+    }
+    
+    private func setupNoResultsLabel() {
+        view.addSubview(noResultsLabel)
+        NSLayoutConstraint.activate([
+            noResultsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            noResultsLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+    }
+    
+    private func updateNoResultsLabelVisibility() {
+        noResultsLabel.isHidden = viewModel.employeeListNumber > 0
     }
     
     private func showErrorAlert(message: String) {
@@ -80,6 +103,7 @@ class EmployessListViewController: UIViewController, UITableViewDelegate, UITabl
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.filterEmployeeList(with: searchText)
+        updateNoResultsLabelVisibility()
         employeesListTableView.reloadData()
     }
     
@@ -87,6 +111,7 @@ class EmployessListViewController: UIViewController, UITableViewDelegate, UITabl
         searchBar.text = ""
         viewModel.filterEmployeeList(with: "")
         searchBar.resignFirstResponder()
+        updateNoResultsLabelVisibility()
         employeesListTableView.reloadData()
     }
 }
