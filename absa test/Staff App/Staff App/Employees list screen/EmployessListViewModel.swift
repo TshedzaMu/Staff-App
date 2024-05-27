@@ -12,7 +12,6 @@ protocol EmployeeSelectionDelegate: AnyObject {
 
 class EmployessListViewModel {
     
-    var numberOfEmployees: Int?
     var employeeList: [Employee]?
     var unFiltredEmployeeList: [Employee] = []
     
@@ -22,20 +21,15 @@ class EmployessListViewModel {
     var onFetchFailed: ((String) -> Void)?
     
     var employeeListNumber: Int {
-        return employeeList?.count ?? Int()
+        return employeeList?.count ?? 0
     }
     
-    func getEmployeeList()  {
+    func getEmployeeList() {
         service.getEmployees { [weak self] response, error in
-            if let response = response {
-                print("Total employees: \(response.total ?? 0)")
-                if let employees = response.data,
-                   let numberOfEmployees = response.total {
-                    self?.employeeList = employees
-                    self?.unFiltredEmployeeList = employees
-                    self?.numberOfEmployees = numberOfEmployees
-                    self?.onEmployeesFetched?()
-                }
+            if let employees = response?.data {
+                self?.employeeList = employees
+                self?.unFiltredEmployeeList = employees
+                self?.onEmployeesFetched?()
             } else {
                 let errorMessage = error ?? "Unknown error"
                 print("Failed to fetch employees, error: \(errorMessage)")
@@ -44,13 +38,11 @@ class EmployessListViewModel {
         }
     }
     
-    func filterTableView(text:String) {
-        if text == "" {
-            self.employeeList = unFiltredEmployeeList
+    func filterEmployeeList(with text: String) {
+        if text.isEmpty {
+            employeeList = unFiltredEmployeeList
         } else {
-            self.employeeList = unFiltredEmployeeList.filter({ (data) -> Bool in
-                return data.first_name?.localizedCaseInsensitiveContains(text) ?? false
-            })
+            employeeList = employeeList?.filter { $0.first_name?.localizedCaseInsensitiveContains(text) ?? false }
         }
     }
 }

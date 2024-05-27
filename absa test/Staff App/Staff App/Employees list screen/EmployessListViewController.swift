@@ -4,10 +4,9 @@
 //  Created by Tshedza Musandiwa on 2024/05/23.
 //
 
-import Foundation
 import UIKit
 
-class EmployessListViewController: UIViewController {
+class EmployessListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     private lazy var viewModel = EmployessListViewModel()
     weak var delegate: EmployeeSelectionDelegate?
@@ -17,11 +16,11 @@ class EmployessListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSearchBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        startActivityIndicator()
         viewModel.onEmployeesFetched = { [weak self] in
             self?.stopActivityIndicator()
             self?.employeesListTableView.reloadData()
@@ -32,7 +31,12 @@ class EmployessListViewController: UIViewController {
             self?.showErrorAlert(message: errorMessage)
         }
         
+        startActivityIndicator()
         viewModel.getEmployeeList()
+    }
+    
+    private func setupSearchBar() {
+        employeeSearchBar.delegate = self
     }
     
     private func showErrorAlert(message: String) {
@@ -40,9 +44,8 @@ class EmployessListViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
-}
-
-extension EmployessListViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.employeeListNumber
@@ -63,24 +66,27 @@ extension EmployessListViewController: UITableViewDataSource, UITableViewDelegat
         return cell
     }
     
+    // MARK: - UITableViewDelegate
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if let employeeInfo = viewModel.employeeList?[indexPath.row] {
             delegate?.didSelectEmployee(employeeInfo)
-            self.dismiss(animated: true)
+            dismiss(animated: true)
         }
     }
-}
-
-extension EmployessListViewController: UISearchBarDelegate {
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        viewModel.filterTableView(text: "")
-        searchBar.resignFirstResponder()
+    // MARK: - UISearchBarDelegate
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.filterEmployeeList(with: searchText)
         employeesListTableView.reloadData()
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel.filterTableView(text: searchText)
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        viewModel.filterEmployeeList(with: "")
+        searchBar.resignFirstResponder()
         employeesListTableView.reloadData()
     }
 }
