@@ -48,7 +48,7 @@ class LoginViewController: UIViewController {
                showAlert(message: "Please enter a password")
                return
            }
-           
+           startActivityIndicator()
            viewModel.login(email: email, password: password)
        }
        
@@ -67,6 +67,7 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: LoginViewModelDelegate {
     func didLoginSuccessfully() {
+        stopActivityIndicator()
         if TokenManager.shared.getToken() != nil {
             performSegue(withIdentifier: "employeeInformationSegue", sender: self)
         } else {
@@ -75,6 +76,7 @@ extension LoginViewController: LoginViewModelDelegate {
     }
     
     func didFailToLogin(withError error: String) {
+        stopActivityIndicator()
         showAlert(message: "Login failed: \(error)")
     }
 }

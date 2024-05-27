@@ -66,12 +66,12 @@ class ReviewScreenViewController: UIViewController {
     }
     
     @IBAction func submitButtonTapped(_ sender: Any) {
+        startActivityIndicator()
         viewModel.updateDetails()
         viewModel.onUpdateComplete = { [weak self] in
             if self?.viewModel.updateTimeStamp != nil {
+                self?.stopActivityIndicator()
                 self?.dataTransporter.updateTimeStamp = self?.viewModel.updateTimeStamp
-                print(self?.viewModel.updateTimeStamp)
-
                 self?.performSegue(withIdentifier: "confirmationSegue", sender: nil)
             }
         }

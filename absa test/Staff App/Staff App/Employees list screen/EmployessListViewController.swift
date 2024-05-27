@@ -18,16 +18,17 @@ class EmployessListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewModel.onEmployeesFetched = { [weak self] in
-            self?.employeesListTableView.reloadData()
-        }
-        
-        viewModel.getEmployeeList()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        startActivityIndicator()
+        viewModel.onEmployeesFetched = { [weak self] in
+            self?.stopActivityIndicator()
+            self?.employeesListTableView.reloadData()
+        }
+        
+        viewModel.getEmployeeList()
     }
 }
 

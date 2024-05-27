@@ -29,7 +29,15 @@ class ColorViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         view.addSubview(tableView)
         
+    
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        startActivityIndicator()
+        
         viewModel.onColorsFetched = { [weak self] in
+            self?.stopActivityIndicator()
             self?.tableView.reloadData()
         }
         
