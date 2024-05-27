@@ -1,4 +1,3 @@
-//
 //  ColorViewModel.swift
 //  Staff App
 //
@@ -13,26 +12,26 @@ protocol ColorSelectionDelegate: AnyObject {
 
 class ColorViewModel {
     
-    var numberOfColors: Int?
     var colorList: [Color]?
-    
     private lazy var service = Service()
     
     var onColorsFetched: (() -> Void)?
+    var onFetchFailed: ((String) -> Void)?
+    
+    var numberOfColors: Int {
+        return colorList?.count ?? 0
+    }
     
     func getColors() {
         service.getColors { [weak self] response, error in
-            if let response = response {
-                if let colors = response.data,
-                   let numberOfColors = response.total {
-                    self?.numberOfColors = numberOfColors
-                    self?.colorList = colors
-                    self?.onColorsFetched?()
-                }
+            if let colors = response?.data {
+                self?.colorList = colors
+                self?.onColorsFetched?()
             } else {
-                print("Failed to fetch colors, error: \(error ?? "Unknown error")")
+                let errorMessage = error ?? "Unknown error"
+                print("Failed to fetch colors, error: \(errorMessage)")
+                self?.onFetchFailed?(errorMessage)
             }
         }
     }
 }
-

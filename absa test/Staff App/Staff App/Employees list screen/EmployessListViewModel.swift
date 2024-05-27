@@ -1,4 +1,3 @@
-//
 //  EmployessListViewModel.swift
 //  Staff App
 //
@@ -20,6 +19,7 @@ class EmployessListViewModel {
     private lazy var service = Service()
     
     var onEmployeesFetched: (() -> Void)?
+    var onFetchFailed: ((String) -> Void)?
     
     var employeeListNumber: Int {
         return employeeList?.count ?? Int()
@@ -37,7 +37,9 @@ class EmployessListViewModel {
                     self?.onEmployeesFetched?()
                 }
             } else {
-                print("Failed to fetch employees, error: \(error ?? "Unknown error")")
+                let errorMessage = error ?? "Unknown error"
+                print("Failed to fetch employees, error: \(errorMessage)")
+                self?.onFetchFailed?(errorMessage)
             }
         }
     }
