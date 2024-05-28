@@ -12,6 +12,8 @@
 		3152119C2C05DF41007FF126 /* EmployeeInformationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3152119B2C05DF41007FF126 /* EmployeeInformationViewModelTests.swift */; };
 		3152119E2C05E112007FF126 /* EmployeesListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3152119D2C05E112007FF126 /* EmployeesListViewModelTests.swift */; };
 		315211A02C05E400007FF126 /* AdditionalInformationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3152119F2C05E400007FF126 /* AdditionalInformationViewModelTests.swift */; };
+		315211A22C05E50F007FF126 /* ColorViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315211A12C05E50F007FF126 /* ColorViewModelTests.swift */; };
+		315211A52C05ED76007FF126 /* ReviewScreenViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315211A42C05ED76007FF126 /* ReviewScreenViewModelTests.swift */; };
 		31A3BE832BFF378D00A7C0D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BE822BFF378D00A7C0D4 /* AppDelegate.swift */; };
 		31A3BE852BFF378D00A7C0D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BE842BFF378D00A7C0D4 /* SceneDelegate.swift */; };
 		31A3BE872BFF378D00A7C0D4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BE862BFF378D00A7C0D4 /* LoginViewController.swift */; };
@@ -76,6 +78,8 @@
 		3152119B2C05DF41007FF126 /* EmployeeInformationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeInformationViewModelTests.swift; sourceTree = "<group>"; };
 		3152119D2C05E112007FF126 /* EmployeesListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListViewModelTests.swift; sourceTree = "<group>"; };
 		3152119F2C05E400007FF126 /* AdditionalInformationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInformationViewModelTests.swift; sourceTree = "<group>"; };
+		315211A12C05E50F007FF126 /* ColorViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewModelTests.swift; sourceTree = "<group>"; };
+		315211A42C05ED76007FF126 /* ReviewScreenViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewScreenViewModelTests.swift; sourceTree = "<group>"; };
 		31A3BE7F2BFF378D00A7C0D4 /* Staff App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Staff App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A3BE822BFF378D00A7C0D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31A3BE842BFF378D00A7C0D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,8 +172,17 @@
 				3152119B2C05DF41007FF126 /* EmployeeInformationViewModelTests.swift */,
 				3152119D2C05E112007FF126 /* EmployeesListViewModelTests.swift */,
 				3152119F2C05E400007FF126 /* AdditionalInformationViewModelTests.swift */,
+				315211A12C05E50F007FF126 /* ColorViewModelTests.swift */,
 			);
 			path = "Employee Information";
+			sourceTree = "<group>";
+		};
+		315211A32C05ED52007FF126 /* Review Screen */ = {
+			isa = PBXGroup;
+			children = (
+				315211A42C05ED76007FF126 /* ReviewScreenViewModelTests.swift */,
+			);
+			path = "Review Screen";
 			sourceTree = "<group>";
 		};
 		31A3BE762BFF378C00A7C0D4 = {
@@ -218,8 +231,9 @@
 			isa = PBXGroup;
 			children = (
 				315211982C05DDDE007FF126 /* LoginTests */,
-				3152119A2C05DF21007FF126 /* Employee Information */,
 				315211992C05DDEF007FF126 /* Helper */,
+				3152119A2C05DF21007FF126 /* Employee Information */,
+				315211A32C05ED52007FF126 /* Review Screen */,
 			);
 			path = "Staff AppTests";
 			sourceTree = "<group>";
@@ -549,9 +563,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3152119C2C05DF41007FF126 /* EmployeeInformationViewModelTests.swift in Sources */,
+				315211A52C05ED76007FF126 /* ReviewScreenViewModelTests.swift in Sources */,
 				3152118F2C05D632007FF126 /* LoginViewModelTests.swift in Sources */,
 				3152119E2C05E112007FF126 /* EmployeesListViewModelTests.swift in Sources */,
 				315211972C05D91B007FF126 /* MockStaffInteractor.swift in Sources */,
+				315211A22C05E50F007FF126 /* ColorViewModelTests.swift in Sources */,
 				315211A02C05E400007FF126 /* AdditionalInformationViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

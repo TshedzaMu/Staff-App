@@ -13,7 +13,7 @@ protocol ColorSelectionDelegate: AnyObject {
 class ColorViewModel {
     
     var colorList: [Color]?
-    private lazy var interactor: StaffInteractorProtocol = StaffInteractor(service: Service())
+    lazy var interactor: StaffInteractorProtocol = StaffInteractor(service: Service())
     
     var onColorsFetched: (() -> Void)?
     var onFetchFailed: ((String) -> Void)?

@@ -2,7 +2,7 @@ import Foundation
 
 class ReviewScreenViewModel {
     
-    private lazy var interactor: StaffInteractorProtocol = StaffInteractor(service: Service())
+    lazy var interactor: StaffInteractorProtocol = StaffInteractor(service: Service())
     var dataTransporter: EmployeeInformationDataTransporter
     var updateTimeStamp: String?
     
