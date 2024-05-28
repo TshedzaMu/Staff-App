@@ -31,9 +31,6 @@ class EmployeeInfomationViewController: UIViewController {
         super.viewDidLoad()
         let nextButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextButtonTapped))
         navigationItem.rightBarButtonItem = nextButton
-        
-        // Set date picker as input view for dateOfBirthTextField
-        dateOfBirthTextField.inputView = datePicker
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,6 +69,7 @@ class EmployeeInfomationViewController: UIViewController {
     }
     
     private func setupView() {
+        dateOfBirthTextField.inputView = datePicker
         profileStackView.applyProfileStyle()
         placeOfBirthTextField.applyProfileStyle()
         dateOfBirthTextField.applyProfileStyle()
