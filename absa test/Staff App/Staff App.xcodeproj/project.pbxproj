@@ -152,12 +152,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		315211982C05DDDE007FF126 /* LoginTests */ = {
+		315211982C05DDDE007FF126 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				3152118E2C05D632007FF126 /* LoginViewModelTests.swift */,
 			);
-			path = LoginTests;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		315211992C05DDEF007FF126 /* Helper */ = {
@@ -240,7 +240,7 @@
 		31A3BE982BFF378E00A7C0D4 /* Staff AppTests */ = {
 			isa = PBXGroup;
 			children = (
-				315211982C05DDDE007FF126 /* LoginTests */,
+				315211982C05DDDE007FF126 /* Login */,
 				315211992C05DDEF007FF126 /* Helper */,
 				3152119A2C05DF21007FF126 /* Employee Information */,
 				315211A32C05ED52007FF126 /* Review Screen */,

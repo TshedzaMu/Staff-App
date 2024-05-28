@@ -26,22 +26,24 @@ final class ColorViewModelTests: XCTestCase {
         try super.tearDownWithError()
     }
     
-//    func testGetColorsSuccess() {
-//        let colors = [Color(id: 1, name: "Red", year: 2022, color: "#FF0000", pantone_value: "12345"),
-//                      Color(id: 2, name: "Blue", year: 2022, color: "#0000FF", pantone_value: "67890")]
-//        mockInteractor.getColorsResult = .success(ColorsResponse(data: colors))
-//        
-//        let expectation = self.expectation(description: "Colors fetched successfully")
-//        
-//        viewModel.onColorsFetched = {
-//            XCTAssertEqual(self.viewModel.numberOfColors, colors.count)
-//            expectation.fulfill()
-//        }
-//        
-//        viewModel.getColors()
-//        
-//        waitForExpectations(timeout: 1, handler: nil)
-//    }
+    func testGetColorsSuccess() {
+        let colors = [Color(id: 1, name: "Red", year: 2022, color: "#FF0000", pantone_value: "12345"),
+                      Color(id: 2, name: "Blue", year: 2022, color: "#0000FF", pantone_value: "67890")]
+        let response = ColorsResponse(page: nil, per_page: nil, total: nil, total_pages: nil, data: colors, support: nil)
+        mockInteractor.getColorsResult = .success(response)
+
+        
+        let expectation = self.expectation(description: "Colors fetched successfully")
+        
+        viewModel.onColorsFetched = {
+            XCTAssertEqual(self.viewModel.numberOfColors, colors.count)
+            expectation.fulfill()
+        }
+        
+        viewModel.getColors()
+        
+        waitForExpectations(timeout: 1, handler: nil)
+    }
     
     func testGetColorsFailure() {
         let error = NSError(domain: "test", code: 1, userInfo: [NSLocalizedDescriptionKey: "Failed to fetch colors"])
