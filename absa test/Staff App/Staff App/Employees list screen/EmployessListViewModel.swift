@@ -9,7 +9,7 @@ class EmployessListViewModel {
     var employeeList: [Employee]?
     var unFilteredEmployeeList: [Employee] = []
     
-    private lazy var interactor: StaffInteractorProtocol = StaffInteractor(service: Service())
+    lazy var interactor: StaffInteractorProtocol = StaffInteractor(service: Service())
     
     var onEmployeesFetched: (() -> Void)?
     var onFetchFailed: ((String) -> Void)?

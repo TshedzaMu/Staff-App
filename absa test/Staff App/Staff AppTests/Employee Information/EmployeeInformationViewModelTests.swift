@@ -79,8 +79,3 @@ final class EmployeeInformationViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.imageURL, "")
     }
 }
-
-class MockEmployeeInformationDataTransporter: EmployeeInformationDataTransporter {
-    // You can extend this mock class if needed for further tests.
-}
-
