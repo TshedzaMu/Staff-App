@@ -35,6 +35,5 @@ class EmployeeInfomationViewModel {
     var imageURL: String {
         return selectedEmployee?.avatar ?? ""
     }
-    
 }
 

@@ -8,7 +8,6 @@
 import Foundation
 @testable import Staff_App
 
-// Mock for StaffInteractorProtocol
 class MockStaffInteractor: StaffInteractorProtocol {
     var loginResult: Result<LoginResponse, Error>?
     var updateDetailsResult: Result<UpdateEmployeeResponse, Error>?

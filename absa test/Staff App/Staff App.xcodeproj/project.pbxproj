@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		3152118F2C05D632007FF126 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3152118E2C05D632007FF126 /* LoginViewModelTests.swift */; };
 		315211972C05D91B007FF126 /* MockStaffInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315211962C05D91B007FF126 /* MockStaffInteractor.swift */; };
+		3152119C2C05DF41007FF126 /* EmployeeInformationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3152119B2C05DF41007FF126 /* EmployeeInformationViewModelTests.swift */; };
 		31A3BE832BFF378D00A7C0D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BE822BFF378D00A7C0D4 /* AppDelegate.swift */; };
 		31A3BE852BFF378D00A7C0D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BE842BFF378D00A7C0D4 /* SceneDelegate.swift */; };
 		31A3BE872BFF378D00A7C0D4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BE862BFF378D00A7C0D4 /* LoginViewController.swift */; };
 		31A3BE8A2BFF378D00A7C0D4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A3BE882BFF378D00A7C0D4 /* Login.storyboard */; };
 		31A3BE8C2BFF378E00A7C0D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31A3BE8B2BFF378E00A7C0D4 /* Assets.xcassets */; };
 		31A3BE8F2BFF378E00A7C0D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A3BE8D2BFF378E00A7C0D4 /* LaunchScreen.storyboard */; };
-		31A3BE9A2BFF378E00A7C0D4 /* Staff_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BE992BFF378E00A7C0D4 /* Staff_AppTests.swift */; };
 		31A3BEA42BFF378E00A7C0D4 /* Staff_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEA32BFF378E00A7C0D4 /* Staff_AppUITests.swift */; };
 		31A3BEA62BFF378E00A7C0D4 /* Staff_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEA52BFF378E00A7C0D4 /* Staff_AppUITestsLaunchTests.swift */; };
 		31A3BEB52BFF686B00A7C0D4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A3BEB42BFF686B00A7C0D4 /* LoginViewModel.swift */; };
@@ -71,6 +71,7 @@
 /* Begin PBXFileReference section */
 		3152118E2C05D632007FF126 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		315211962C05D91B007FF126 /* MockStaffInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStaffInteractor.swift; sourceTree = "<group>"; };
+		3152119B2C05DF41007FF126 /* EmployeeInformationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeInformationViewModelTests.swift; sourceTree = "<group>"; };
 		31A3BE7F2BFF378D00A7C0D4 /* Staff App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Staff App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A3BE822BFF378D00A7C0D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31A3BE842BFF378D00A7C0D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,7 +81,6 @@
 		31A3BE8E2BFF378E00A7C0D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31A3BE902BFF378E00A7C0D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31A3BE952BFF378E00A7C0D4 /* Staff AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Staff AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		31A3BE992BFF378E00A7C0D4 /* Staff_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff_AppTests.swift; sourceTree = "<group>"; };
 		31A3BE9F2BFF378E00A7C0D4 /* Staff AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Staff AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A3BEA32BFF378E00A7C0D4 /* Staff_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff_AppUITests.swift; sourceTree = "<group>"; };
 		31A3BEA52BFF378E00A7C0D4 /* Staff_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -142,6 +142,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		315211982C05DDDE007FF126 /* LoginTests */ = {
+			isa = PBXGroup;
+			children = (
+				3152118E2C05D632007FF126 /* LoginViewModelTests.swift */,
+			);
+			path = LoginTests;
+			sourceTree = "<group>";
+		};
+		315211992C05DDEF007FF126 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				315211962C05D91B007FF126 /* MockStaffInteractor.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		3152119A2C05DF21007FF126 /* Employee Information */ = {
+			isa = PBXGroup;
+			children = (
+				3152119B2C05DF41007FF126 /* EmployeeInformationViewModelTests.swift */,
+			);
+			path = "Employee Information";
+			sourceTree = "<group>";
+		};
 		31A3BE762BFF378C00A7C0D4 = {
 			isa = PBXGroup;
 			children = (
@@ -187,9 +211,9 @@
 		31A3BE982BFF378E00A7C0D4 /* Staff AppTests */ = {
 			isa = PBXGroup;
 			children = (
-				31A3BE992BFF378E00A7C0D4 /* Staff_AppTests.swift */,
-				3152118E2C05D632007FF126 /* LoginViewModelTests.swift */,
-				315211962C05D91B007FF126 /* MockStaffInteractor.swift */,
+				3152119A2C05DF21007FF126 /* Employee Information */,
+				315211992C05DDEF007FF126 /* Helper */,
+				315211982C05DDDE007FF126 /* LoginTests */,
 			);
 			path = "Staff AppTests";
 			sourceTree = "<group>";
@@ -518,8 +542,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3152119C2C05DF41007FF126 /* EmployeeInformationViewModelTests.swift in Sources */,
 				3152118F2C05D632007FF126 /* LoginViewModelTests.swift in Sources */,
-				31A3BE9A2BFF378E00A7C0D4 /* Staff_AppTests.swift in Sources */,
 				315211972C05D91B007FF126 /* MockStaffInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
