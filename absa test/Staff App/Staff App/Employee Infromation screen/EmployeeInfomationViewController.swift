@@ -20,10 +20,20 @@ class EmployeeInfomationViewController: UIViewController {
     var dataTransporter = EmployeeInformationDataTransporter()
     private lazy var viewModel = EmployeeInfomationViewModel(dataTransporter: dataTransporter)
     
+    private lazy var datePicker: UIDatePicker = {
+        let picker = UIDatePicker()
+        picker.datePickerMode = .date
+        picker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
+        return picker
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let nextButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextButtonTapped))
         navigationItem.rightBarButtonItem = nextButton
+        
+        // Set date picker as input view for dateOfBirthTextField
+        dateOfBirthTextField.inputView = datePicker
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,11 +65,16 @@ class EmployeeInfomationViewController: UIViewController {
         self.present(employeeViewController, animated: true, completion: nil)
     }
     
+    @objc private func datePickerValueChanged(_ sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateOfBirthTextField.text = dateFormatter.string(from: sender.date)
+    }
+    
     private func setupView() {
         profileStackView.applyProfileStyle()
-        dateOfBirthTextField.applyProfileStyle()
         placeOfBirthTextField.applyProfileStyle()
-        
+        dateOfBirthTextField.applyProfileStyle()
         profileStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(profileStackviewClicked)))
     }
     
