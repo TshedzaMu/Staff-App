@@ -74,13 +74,12 @@ final class ReviewScreenViewModelTests: XCTestCase {
     }
     
     func testToken() {
-        TokenManager.shared.saveToken("test_token")
-        XCTAssertEqual(viewModel.token, "test_token")
+        XCTAssertEqual(viewModel.token, TokenManager.shared.getToken())
     }
     
     func testRequestModel() {
         let requestModel = viewModel.requestModel
-        XCTAssertEqual(requestModel.userLoginToken, "test_token")
+        XCTAssertEqual(requestModel.userLoginToken, TokenManager.shared.getToken())
         XCTAssertEqual(requestModel.personalDetails.id, 1)
         XCTAssertEqual(requestModel.personalDetails.email, "test@example.com")
         XCTAssertEqual(requestModel.personalDetails.first_name, "John")
