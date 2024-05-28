@@ -55,6 +55,7 @@ class AdditionalInformationViewController: UIViewController {
          }
          viewModel.dataTransporter.gender = selectedGender.rawValue
     }
+
     
     private func updateGenderSegmentControl() {
         guard let gender = Gender(rawValue: viewModel.dataTransporter.gender ?? "") else {
@@ -106,7 +107,6 @@ class AdditionalInformationViewController: UIViewController {
     }
     
     private func updateDataTransporter() {
-        viewModel.dataTransporter.gender = "Male"
         viewModel.dataTransporter.residentialAddress = residentialAddressTexField.text
         viewModel.dataTransporter.preferredColor = viewModel.colorName
     }
