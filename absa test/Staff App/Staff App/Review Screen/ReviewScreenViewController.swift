@@ -48,13 +48,13 @@ class ReviewScreenViewController: UIViewController {
     
     private func updateViewWithData() {
         profileImage.load(urlString: viewModel.imageURL)
-        nameLabel.text = viewModel.fullName
-        genderLabel.text = viewModel.gender
-        dateOfBirthLabel.text = viewModel.dateOfBirth
-        emailLabel.text = viewModel.email
-        residentialAddressLabel.text = viewModel.residentialAddress
-        placeOfBirth.text =  viewModel.placeOfBirth
-        prefferedColor.text =  viewModel.preferredColor
+        nameLabel.text = "Full name: \(viewModel.fullName)"
+        genderLabel.text = "Gender:  \(viewModel.gender)"
+        dateOfBirthLabel.text = "Date of birth: \(viewModel.dateOfBirth)"
+        emailLabel.text = "Email: \(viewModel.email)"
+        residentialAddressLabel.text = "Residential address: \(viewModel.residentialAddress)"
+        placeOfBirth.text =  "Place of birth: \(viewModel.placeOfBirth)"
+        prefferedColor.text = "Preferred color: \(viewModel.preferredColor)"
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

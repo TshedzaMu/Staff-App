@@ -37,6 +37,14 @@ class AdditionalInformationViewController: UIViewController {
             return
         }
         
+        if viewModel.dataTransporter.gender == nil || viewModel.dataTransporter.gender?.isEmpty == true {
+            let selectedIndex = genderSegmentControl.selectedSegmentIndex
+            if selectedIndex != UISegmentedControl.noSegment {
+                let selectedGender = genderSegmentControl.titleForSegment(at: selectedIndex)
+                viewModel.dataTransporter.gender = selectedGender
+            }
+        }
+        
         updateDataTransporter()
         performSegue(withIdentifier: "reviewSegue", sender: nil)
     }
@@ -51,29 +59,27 @@ class AdditionalInformationViewController: UIViewController {
 
     @IBAction private func genderSegment(_ sender: UISegmentedControl) {
         guard let selectedGender = Gender(rawValue: sender.titleForSegment(at: sender.selectedSegmentIndex) ?? "") else {
-             return
-         }
-         viewModel.dataTransporter.gender = selectedGender.rawValue
+            return
+        }
+        viewModel.dataTransporter.gender = selectedGender.rawValue
     }
 
-    
     private func updateGenderSegmentControl() {
         guard let gender = Gender(rawValue: viewModel.dataTransporter.gender ?? "") else {
-              return
-          }
-          
-          switch gender {
-          case .male:
-              genderSegmentControl.selectedSegmentIndex = 0
-          case .female:
-              genderSegmentControl.selectedSegmentIndex = 1
-          case .other:
-              genderSegmentControl.selectedSegmentIndex = 2
-          }
-      }
+            return
+        }
+        
+        switch gender {
+        case .male:
+            genderSegmentControl.selectedSegmentIndex = 0
+        case .female:
+            genderSegmentControl.selectedSegmentIndex = 1
+        case .other:
+            genderSegmentControl.selectedSegmentIndex = 2
+        }
+    }
 
     private func setupView() {
-        
         colorStack.applyProfileStyle()
         residentialAddressTexField.applyProfileStyle()
 
