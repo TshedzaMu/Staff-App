@@ -8,11 +8,11 @@ import UIKit
 
 class EmployessListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
-    private lazy var viewModel = EmployessListViewModel()
-    weak var delegate: EmployeeSelectionDelegate?
-    
     @IBOutlet private var employeesListTableView: UITableView!
     @IBOutlet private weak var employeeSearchBar: UISearchBar!
+    
+    private lazy var viewModel = EmployessListViewModel()
+    weak var delegate: EmployeeSelectionDelegate?
     
     private let noResultsLabel: UILabel = {
         let label = UILabel()

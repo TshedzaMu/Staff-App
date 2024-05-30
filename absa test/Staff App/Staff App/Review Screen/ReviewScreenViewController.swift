@@ -10,7 +10,6 @@ import UIKit
 
 class ReviewScreenViewController: UIViewController {
     
-    
     @IBOutlet private weak var profileImage: UIImageView!
     @IBOutlet private weak var personalDetailsStack: UIStackView!
     @IBOutlet private weak var nameLabel: UILabel!
