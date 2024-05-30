@@ -10,7 +10,7 @@ import UIKit
 
 class EmployeeInfomationViewController: UIViewController {
     
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet private weak var profileImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var emailLabel: UILabel!
     @IBOutlet private weak var profileStackView: UIStackView!

@@ -14,7 +14,6 @@ protocol StaffInteractorProtocol {
     func getColors(completed: @escaping (Result<ColorsResponse, Error>) -> Void)
 }
 
-
 class StaffInteractor: StaffInteractorProtocol {
     private let service: ServiceProtocol
     
@@ -62,5 +61,3 @@ class StaffInteractor: StaffInteractorProtocol {
         service.makeGetRequest(url: url, completion: completed)
     }
 }
-
-

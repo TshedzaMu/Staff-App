@@ -12,8 +12,6 @@ class ConfirmationViewController: UIViewController {
     
     @IBOutlet private weak var resultsLabel: UILabel!
     @IBOutlet private weak var resultsMessageLabel: UILabel!
-    
-    
     @IBOutlet private weak var doneButton: UIButton!
     
     var dataTransporter: EmployeeInformationDataTransporter!

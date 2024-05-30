@@ -13,7 +13,6 @@ class ReviewScreenViewController: UIViewController {
     
     @IBOutlet private weak var profileImage: UIImageView!
     @IBOutlet private weak var personalDetailsStack: UIStackView!
-    
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var genderLabel: UILabel!
     @IBOutlet private weak var dateOfBirthLabel: UILabel!
@@ -21,7 +20,6 @@ class ReviewScreenViewController: UIViewController {
     @IBOutlet private weak var residentialAddressLabel: UILabel!
     @IBOutlet private weak var placeOfBirth: UILabel!
     @IBOutlet private weak var prefferedColor: UILabel!
-    
     @IBOutlet private weak var additionalInfoStack: UIStackView!
     @IBOutlet private weak var submitButton: UIButton!
     

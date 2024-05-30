@@ -14,7 +14,7 @@ class AdditionalInformationViewController: UIViewController {
     @IBOutlet private weak var colorNameLabel: UILabel!
     @IBOutlet private weak var colorStack: UIStackView!
     @IBOutlet private weak var residentialAddressTexField: UITextField!
-    @IBOutlet weak var genderSegmentControl: UISegmentedControl!
+    @IBOutlet private weak var genderSegmentControl: UISegmentedControl!
     
     private lazy var viewModel = AdditionalInformationViewModel(dataTransporter: dataTransporter)
     var dataTransporter: EmployeeInformationDataTransporter!
